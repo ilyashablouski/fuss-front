@@ -1,0 +1,53 @@
+@use "../services.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body,
+main {
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: $extra-border;
+    backdrop-filter: blur(24px);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: transparent;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 40px 0 200px 0;
+
+  @include media-max($md) {
+    padding: 84px 0 80px 0;
+  }
+}
