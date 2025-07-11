@@ -3,5 +3,16 @@
   "trailingComma": "all",
   "bracketSameLine": false,
   "bracketSpacing": true,
-  "printWidth": 108
+  "printWidth": 108,
+  "plugins": [
+    "prettier-plugin-astro"
+  ],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }
