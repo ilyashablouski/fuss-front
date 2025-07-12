@@ -28,3 +28,30 @@ $border-divider: rgba(231, 233, 231, 0.2);
 //extra
 $extra-border: #ffffff38;
 
+// Convert to css variables
+:root {
+  // bg
+  --bg-primary: #{$bg-primary};
+
+  // text
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-tertiary: #{$text-tertiary};
+  --text-red: #{$text-red};
+
+  // icons
+  --icon-red: #{$icon-red};
+  --icon-green: #{$icon-green};
+  --icon-graphite: #{$icon-graphite};
+
+  // buttons
+  --button-primary-default: #{$button-primary-default};
+
+  //border
+  --border-default: #{$border-default};
+  --border-divider: #{$border-divider};
+
+  //extra
+  --extra-border: #{$extra-border};
+}
+
