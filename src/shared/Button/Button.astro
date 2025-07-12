@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import styles from './Button.module.scss';
+
+interface Props extends Omit<HTMLAttributes<'a' | 'button'>, 'type'> {
+  variant?: 'contained' | 'outlined' | 'text';
+  size?: 'small' | 'medium' | 'large';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const { variant = 'contained', size = 'medium', href, class: className, ...rest } = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag href={href} class:list={[styles.button, styles[variant], styles[size], className]} {...rest}>
+  <slot />
+</Tag>
