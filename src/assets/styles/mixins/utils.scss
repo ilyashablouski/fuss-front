@@ -4,5 +4,5 @@
 
 // Function to convert pixels to rems
 @function rem($pixels) {
-  @return #{$pixels / 10}rem;
+  @return #{calc($pixels / 10)}rem;
 }
