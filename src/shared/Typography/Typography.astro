@@ -2,17 +2,15 @@
 import type { HTMLAttributes, HTMLTag } from 'astro/types';
 import styles from './Typography.module.scss';
 
-// Определяем типы для пропсов компонента
 type Props<Tag extends HTMLTag> = HTMLAttributes<Tag> & {
   variant?: 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'button';
   as?: Tag;
   class?: string;
 };
 
-// Получаем пропсы, устанавливаем значения по умолчанию и указываем тип
 const { as, variant = 'body1', class: className, ...rest } = Astro.props as Props<any>;
 
-// Карта для сопоставления варианта с тегом по умолчанию
+// Variants mapping
 const variantToTag: Record<NonNullable<Props<any>['variant']>, HTMLTag> = {
   h1: 'h1',
   h2: 'h2',
