@@ -1,3 +1,8 @@
 @mixin transition($duration: 150ms, $property: all, $fn: ease-in-out) {
   transition: $duration $property $fn;
 }
+
+// Function to convert pixels to rems
+@function rem($pixels) {
+  @return #{$pixels / 10}rem;
+}
