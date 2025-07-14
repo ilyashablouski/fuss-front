@@ -20,6 +20,8 @@ $button-primary-default: #BEFF7D;
 //$button-primary-clicked: #f2f059;
 //$button-primary-disabled: #f5f37866;
 
+$button-secondary-default: #E7E9E7;
+
 
 //border
 $border-default: #E7E9E7;
@@ -36,7 +38,7 @@ $extra-border: #ffffff38;
   // text
   --text-primary: #{$text-primary};
   --text-secondary: #{$text-secondary};
-  --text-tertiary: #{$text-green};
+  --text-green: #{$text-green};
   --text-red: #{$text-red};
 
   // icons
@@ -46,6 +48,7 @@ $extra-border: #ffffff38;
 
   // buttons
   --button-primary-default: #{$button-primary-default};
+  --button-secondary-default: #{$button-secondary-default};
 
   //border
   --border-default: #{$border-default};
