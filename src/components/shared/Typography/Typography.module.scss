@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   color: $text-primary;
+  font-family: $manrope;
 }
 
 .typography-- {
@@ -38,6 +39,13 @@
   &body3 {
     font-size: rem($fs-40);
     font-weight: 600;
+    line-height: 1;
+  }
+
+  &extra {
+    font-size: rem($fs-32);
+    font-weight: 400;
+    font-family: $caveat;
     line-height: 1;
   }
 
