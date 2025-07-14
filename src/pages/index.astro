@@ -3,7 +3,27 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '../components/layout/Header/Header.astro';
 import HeroSection from '../components/main-page/HeroSection.astro';
 import PlanSection from '../components/main-page/PlanSection.astro';
+import Typography from '../components/shared/Typography/Typography.astro';
+import Button from '../components/shared/Button/Button.astro';
 ---
+
+<style lang="scss">
+  .bottom-section {
+    margin-top: 100px;
+
+    &__text {
+      text-align: center;
+    }
+
+    &__btn {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>
+
+<style lang="scss"></style>
 
 <Layout>
   <Header />
@@ -13,6 +33,17 @@ import PlanSection from '../components/main-page/PlanSection.astro';
       <main>
         <HeroSection />
         <PlanSection />
+        <section class="bottom-section">
+          <div class="bottom-section__text">
+            <Typography variant="heavy"
+              >Create your list, invite your crew, vote together, and lock in a spot you'll all love
+            </Typography>
+          </div>
+
+          <div class="bottom-section__btn">
+            <Button variant="contained" size="large">Download</Button>
+          </div>
+        </section>
       </main>
     </div>
   </main>
