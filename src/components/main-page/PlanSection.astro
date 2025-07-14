@@ -1,0 +1,109 @@
+---
+import Typography from '../shared/Typography/Typography.astro';
+import Button from '../shared/Button/Button.astro';
+import Image from 'astro/components/Image.astro';
+import appUiPlanWithFriendsImg from '@/assets/images/app-ui-plan-with-friends.png';
+import FlameSvg from '@/assets/images/flame.svg';
+---
+
+<style lang="scss">
+  .plan {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 102px;
+
+    &-left {
+      flex: 1 1 450px;
+      max-width: 450px;
+
+      &__heading {
+        &-extra {
+          font-family: 'Caveat', cursive;
+
+          &-green {
+            color: var(--text-green);
+          }
+
+          &-red {
+            color: var(--text-red);
+          }
+        }
+      }
+
+      &__text {
+        margin-top: 24px;
+      }
+
+      &__bottom {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+      }
+
+      &__extra-text {
+        margin-left: 16px;
+        flex-shrink: 0;
+      }
+    }
+
+    &-right {
+      display: flex;
+      flex: 1 1 auto;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 1;
+      }
+
+      &__image-flame {
+        margin-left: 63px;
+        position: relative;
+        top: 300px;
+        min-width: 111px;
+      }
+    }
+  }
+
+  .app-store-btn {
+    background: var(--button-secondary-default);
+    color: var(--text-secondary);
+  }
+</style>
+
+<section class="plan">
+  <div class="plan-left">
+    <div class="plan-left__heading">
+      <Typography variant="h2"
+        >THE APP THAT SAVES <span class="plan-left__heading-extra plan-left__heading-extra-green"
+          >FRIENDSHIPS</span
+        >
+        <span class="plan-left__heading-extra"> & </span>
+        <span class="plan-left__heading-extra plan-left__heading-extra-red">DATES</span>
+      </Typography>
+    </div>
+
+    <div class="plan-left__text">
+      <Typography variant="body1">
+        Turning 'we should meet up' into 'see you at 8' since forever
+      </Typography>
+    </div>
+
+    <div class="plan-left__bottom">
+      <Button class="app-store-btn">Download on the app store</Button>
+
+      <div class="plan-left__extra-text">
+        <Typography variant="extra">Android coming soon</Typography>
+      </div>
+    </div>
+  </div>
+  <div class="plan-right">
+    <Image src={appUiPlanWithFriendsImg} alt="FUSS app interface showing Plan with Friends feature" />
+    <div class="plan-right__image-flame">
+      <FlameSvg width={111} height={179} />
+    </div>
+  </div>
+</section>
