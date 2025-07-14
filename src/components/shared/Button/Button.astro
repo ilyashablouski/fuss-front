@@ -5,15 +5,27 @@ import styles from './Button.module.scss';
 interface Props extends Omit<HTMLAttributes<'a' | 'button'>, 'type'> {
   variant?: 'contained' | 'outlined' | 'text';
   size?: 'small' | 'medium' | 'large';
+  color?: 'primary' | 'secondary';
   href?: string;
   type?: 'button' | 'submit' | 'reset';
 }
 
-const { variant = 'contained', size = 'medium', href, class: className, ...rest } = Astro.props;
+const {
+  variant = 'contained',
+  size = 'medium',
+  color = 'primary',
+  href,
+  class: className,
+  ...rest
+} = Astro.props;
 
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag href={href} class:list={[styles.button, styles[variant], styles[size], className]} {...rest}>
+<Tag
+  href={href}
+  class:list={[styles.button, styles[variant], styles[size], styles[color], className]}
+  {...rest}
+>
   <slot />
 </Tag>

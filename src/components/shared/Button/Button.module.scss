@@ -1,0 +1,76 @@
+.button {
+  position: relative;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 700;
+  user-select: none;
+  cursor: pointer;
+
+  // --- Sizes ---
+  &.small {
+    padding: 16px 18px;
+    font-size: rem($fs-20);
+    line-height: 1.2;
+  }
+
+  &.medium {
+    padding: 16px 24px;
+    font-size: rem($fs-17);
+    font-weight: 600;
+    line-height: 1.41;
+  }
+
+  &.large {
+    padding: 20px 52px;
+    font-size: rem($fs-24);
+    line-height: 1;
+  }
+
+  //Todo: add hovers & other states
+
+  // --- Variants ---
+  &.text {
+
+    //&:hover {
+    //  background-color: rgba(190, 255, 125, 0.08); // Fallback, ideally use CSS var
+    //}
+  }
+
+  &.contained {
+    background: $button-primary-default;
+
+    //&:hover {
+    //  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    //}
+  }
+
+  &.outlined {
+    border: 1px solid $button-primary-default;
+
+    //&:hover {
+    //  background-color: rgba(190, 255, 125, 0.08); // Fallback, ideally use CSS var
+    //}
+  }
+
+  // --- Colors ---
+
+  &.primary {
+    color: $text-secondary;
+    //предлагаю hover сюда
+  }
+
+  &.secondary {
+    color: $text-green;
+  }
+}
