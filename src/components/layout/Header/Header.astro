@@ -4,21 +4,10 @@ import Button from '@/components/shared/Button/Button.astro';
 import styles from './Header.module.scss';
 ---
 
-<header
-  style={{
-    padding: '28px 0',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  }}
->
-  <div class="container">
-    <div class={styles.header__wrapper}>
-      <a href="/">
-        <FussLogo width={92} />
-      </a>
+<header class={styles.header}>
+  <a href="/">
+    <FussLogo width={92} />
+  </a>
 
-      <Button variant="contained" size="large">Download</Button>
-    </div>
-  </div>
+  <Button variant="contained" size="large">Download</Button>
 </header>
