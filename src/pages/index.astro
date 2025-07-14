@@ -1,41 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import inRealLifeTextImg from '@/assets/images/meet-in-real-life.svg';
-import Image from 'astro/components/Image.astro';
 import Header from '../components/layout/Header/Header.astro';
-import Typography from '../components/shared/Typography/Typography.astro';
-import Button from '../components/shared/Button/Button.astro';
+import HeroSection from '../components/main-page/HeroSection.astro';
 ---
-
-<style lang="scss">
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__image {
-      display: flex;
-      margin-top: 150px;
-      text-align: center;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    &__text {
-      margin-top: 24px;
-    }
-
-    &__btn {
-      margin-top: 24px;
-    }
-
-    &__extra-text {
-      margin-top: 8px;
-    }
-  }
-</style>
 
 <Layout>
   <Header />
@@ -43,23 +10,9 @@ import Button from '../components/shared/Button/Button.astro';
   <main>
     <div class="container">
       <main>
-        <section class="hero">
-          <div class="hero__image">
-            <Image src={inRealLifeTextImg} alt="Meet in Real Life" fetchpriority="high" />
-          </div>
+        <HeroSection />
 
-          <div class="hero__text">
-            <Typography variant="body3">Simple and easy way to find a job in real life</Typography>
-          </div>
-
-          <div class="hero__btn">
-            <Button variant="contained" size="large">Download</Button>
-          </div>
-
-          <div class="hero__extra-text">
-            <Typography variant="extra">Android coming soon</Typography>
-          </div>
-        </section>
+        <section></section>
       </main>
     </div>
   </main>
