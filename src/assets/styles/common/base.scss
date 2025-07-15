@@ -75,15 +75,20 @@ body {
   }
 }
 
-.link {
+
+a {
   display: inline-flex;
+  cursor: pointer;
+
+  &:hover {
+    color: $text-red;
+    @include transition();
+  }
+}
+
+.link {
   color: $text-primary;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.33;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
