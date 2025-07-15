@@ -5,6 +5,8 @@ import HeroSection from '../components/main-page/HeroSection.astro';
 import PlanSection from '../components/main-page/PlanSection.astro';
 import Typography from '../components/shared/Typography/Typography.astro';
 import Button from '../components/shared/Button/Button.astro';
+import FussLogo from '@/assets/images/logo.svg';
+import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
 ---
 
 <style lang="scss">
@@ -23,28 +25,90 @@ import Button from '../components/shared/Button/Button.astro';
   }
 </style>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .footer {
+    margin-top: 100px;
+    padding-top: 64px;
+    padding-bottom: 48px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__left {
+      &-links {
+        margin-top: 32px;
+        display: flex;
+        gap: 32px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      height: fit-content;
+      gap: 32px;
+    }
+
+    &__bottom {
+      margin-top: 64px;
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      border-top: 1px solid var(--border-divider);
+    }
+  }
+
+  .app-store-btn {
+    background: var(--button-secondary-default) !important;
+    color: var(--text-secondary) !important;
+  }
+</style>
 
 <Layout>
   <Header />
 
   <main>
-    <div class="container">
-      <main>
-        <HeroSection />
-        <PlanSection />
-        <section class="bottom-section">
-          <div class="bottom-section__text">
-            <Typography variant="heavy"
-              >Create your list, invite your crew, vote together, and lock in a spot you'll all love
-            </Typography>
-          </div>
+    <HeroSection />
+    <PlanSection />
 
-          <div class="bottom-section__btn">
-            <Button variant="contained" size="large">Download</Button>
-          </div>
-        </section>
-      </main>
-    </div>
+    <section class="bottom-section">
+      <div class="bottom-section__text">
+        <Typography variant="heavy"
+          >Create your list, invite your crew, vote together, and lock in a spot you'll all love
+        </Typography>
+      </div>
+
+      <div class="bottom-section__btn">
+        <Button variant="contained" size="large">Download</Button>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__left">
+        <a class="link" href="/">
+          <FussLogo width={92} />
+        </a>
+
+        <div class="footer__left-links">
+          <a class="link" href="/">Privacy Policy</a>
+          <a class="link" href="/">Terms</a>
+        </div>
+      </div>
+      <div class="footer__right">
+        <Button class="app-store-btn" href="/">Download on the app store</Button>
+        <Button variant="contained" size="small" href="/">Tell me more</Button>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <Typography variant="small" aria-label="copyright">© 2025 FUSS. All rights reserved.</Typography>
+
+      <a class="link" href="https://instagram.com" target="_blank">
+        <InstagramIcon />
+      </a>
+    </div>
+  </footer>
 </Layout>
