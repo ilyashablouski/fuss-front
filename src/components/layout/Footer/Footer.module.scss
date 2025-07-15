@@ -1,0 +1,33 @@
+.footer {
+  margin-top: 100px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    &-links {
+      margin-top: 32px;
+      display: flex;
+      gap: 32px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    height: fit-content;
+    gap: 32px;
+  }
+
+  &__bottom {
+    margin-top: 64px;
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    border-top: 1px solid var(--border-divider);
+  }
+}

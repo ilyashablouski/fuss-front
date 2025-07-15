@@ -5,9 +5,7 @@ import HeroSection from '../components/main-page/HeroSection.astro';
 import PlanSection from '../components/main-page/PlanSection.astro';
 import Typography from '../components/shared/Typography/Typography.astro';
 import Button from '../components/shared/Button/Button.astro';
-import FussLogo from '@/assets/images/logo.svg';
-import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
-import AppStoreButton from '../components/shared/AppStoreButton/AppStoreButton.astro';
+import Footer from '../components/layout/Footer/Footer.astro';
 ---
 
 <style lang="scss">
@@ -22,42 +20,6 @@ import AppStoreButton from '../components/shared/AppStoreButton/AppStoreButton.a
       margin-top: 32px;
       display: flex;
       justify-content: center;
-    }
-  }
-</style>
-
-<style lang="scss">
-  .footer {
-    margin-top: 100px;
-    padding-top: 64px;
-    padding-bottom: 48px;
-
-    &__wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &__left {
-      &-links {
-        margin-top: 32px;
-        display: flex;
-        gap: 32px;
-      }
-    }
-
-    &__right {
-      display: flex;
-      height: fit-content;
-      gap: 32px;
-    }
-
-    &__bottom {
-      margin-top: 64px;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      gap: 32px;
-      border-top: 1px solid var(--border-divider);
     }
   }
 </style>
@@ -82,29 +44,5 @@ import AppStoreButton from '../components/shared/AppStoreButton/AppStoreButton.a
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__wrapper">
-      <div class="footer__left">
-        <a class="link" href="/">
-          <FussLogo width={92} />
-        </a>
-
-        <div class="footer__left-links">
-          <a class="link" href="/">Privacy Policy</a>
-          <a class="link" href="/">Terms</a>
-        </div>
-      </div>
-      <div class="footer__right">
-        <AppStoreButton />
-        <Button variant="contained" size="small" href="/tell-me-more">Tell me more</Button>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <Typography variant="small" aria-label="copyright">© 2025 FUSS. All rights reserved.</Typography>
-
-      <a class="link" href="https://instagram.com" target="_blank">
-        <InstagramIcon />
-      </a>
-    </div>
-  </footer>
+  <Footer />
 </Layout>

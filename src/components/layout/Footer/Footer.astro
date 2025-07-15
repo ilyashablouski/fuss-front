@@ -1,0 +1,34 @@
+---
+import AppStoreButton from '../../shared/AppStoreButton/AppStoreButton.astro';
+import Typography from '../../shared/Typography/Typography.astro';
+import Button from '../../shared/Button/Button.astro';
+import FussLogo from '@/assets/images/logo.svg';
+import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
+import styles from './Footer.module.scss';
+---
+
+<footer class={styles.footer}>
+  <div class={styles.footer__wrapper}>
+    <div class={styles.footer__left}>
+      <a class="link" href="/">
+        <FussLogo width={92} />
+      </a>
+
+      <div class={styles.footer__leftLinks}>
+        <a class="link" href="/">Privacy Policy</a>
+        <a class="link" href="/">Terms</a>
+      </div>
+    </div>
+    <div class={styles.footer__right}>
+      <AppStoreButton />
+      <Button variant="contained" size="small" href="/tell-me-more">Tell me more</Button>
+    </div>
+  </div>
+  <div class={styles.footer__bottom}>
+    <Typography variant="small" aria-label="copyright">© 2025 FUSS. All rights reserved.</Typography>
+
+    <a class="link" href="https://instagram.com" target="_blank">
+      <InstagramIcon />
+    </a>
+  </div>
+</footer>
