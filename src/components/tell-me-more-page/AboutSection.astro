@@ -1,0 +1,81 @@
+---
+import Typography from '../shared/Typography/Typography.astro';
+import Image from 'astro/components/Image.astro';
+import CircleIcon1 from '@/assets/icons/circles/circle-1.svg';
+import friendsHavingFunImg from '@/assets/images/friends-having-fun.png';
+---
+
+<style lang="scss">
+  .about {
+    margin-top: 150px;
+
+    &__heading {
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    &__wrapper {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 64px;
+    }
+
+    &__left {
+      max-width: 519px;
+
+      &--title {
+        position: relative;
+      }
+
+      &--text {
+        margin-top: 32px;
+        text-align: center;
+      }
+
+      &--circle {
+        position: absolute;
+        left: -25px;
+        top: -30px;
+        width: 224px;
+        height: 115px;
+        color: var(--icon-red);
+      }
+    }
+
+    &__right {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+</style>
+
+<section class="about">
+  <div class="about__heading">
+    <Typography variant="h2" style="font-weight: 600;">What it actually does:</Typography>
+  </div>
+  <div class="about__wrapper">
+    <div class="about__left">
+      <div class="about__left--title">
+        <CircleIcon1 class="about__left--circle" />
+        <Typography variant="h3">Picks for the whole group</Typography>
+      </div>
+      <div class="about__left--text">
+        <Typography variant="body2"
+          >You add your friends, they vote, and FUSS shows you the spot that fits everyone’s mood. So no one
+          has to be the bad guy. Or the planner. Or the overthinker
+        </Typography>
+      </div>
+    </div>
+    <div class="about__right">
+      <Image
+        src={friendsHavingFunImg}
+        alt="Group of friends hanging out together in real life"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+</section>
