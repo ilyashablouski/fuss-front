@@ -7,6 +7,7 @@ import Typography from '../components/shared/Typography/Typography.astro';
 import Button from '../components/shared/Button/Button.astro';
 import FussLogo from '@/assets/images/logo.svg';
 import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
+import AppStoreButton from '../components/shared/AppStoreButton/AppStoreButton.astro';
 ---
 
 <style lang="scss">
@@ -59,11 +60,6 @@ import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
       border-top: 1px solid var(--border-divider);
     }
   }
-
-  .app-store-btn {
-    background: var(--button-secondary-default) !important;
-    color: var(--text-secondary) !important;
-  }
 </style>
 
 <Layout>
@@ -99,7 +95,7 @@ import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
         </div>
       </div>
       <div class="footer__right">
-        <Button class="app-store-btn" href="/">Download on the app store</Button>
+        <AppStoreButton />
         <Button variant="contained" size="small" href="/">Tell me more</Button>
       </div>
     </div>

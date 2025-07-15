@@ -4,6 +4,7 @@ import Button from '../shared/Button/Button.astro';
 import Image from 'astro/components/Image.astro';
 import appUiPlanWithFriendsImg from '@/assets/images/app-ui-plan-with-friends.png';
 import FlameSvg from '@/assets/images/flame.svg';
+import AppStoreButton from '../shared/AppStoreButton/AppStoreButton.astro';
 ---
 
 <style lang="scss">
@@ -67,11 +68,6 @@ import FlameSvg from '@/assets/images/flame.svg';
       }
     }
   }
-
-  .app-store-btn {
-    background: var(--button-secondary-default);
-    color: var(--text-secondary);
-  }
 </style>
 
 <section class="plan">
@@ -93,8 +89,7 @@ import FlameSvg from '@/assets/images/flame.svg';
     </div>
 
     <div class="plan-left__bottom">
-      <Button class="app-store-btn">Download on the app store</Button>
-
+      <AppStoreButton />
       <div class="plan-left__extra-text">
         <Typography variant="extra">Android coming soon</Typography>
       </div>
