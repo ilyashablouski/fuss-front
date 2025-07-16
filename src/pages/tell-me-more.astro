@@ -1,9 +1,11 @@
 ---
-import Header from '../components/layout/Header/Header.astro';
+import Header from '../components/shared/layout/Header/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/tell-me-more-page/HeroSection.astro';
-import Footer from '../components/layout/Footer/Footer.astro';
+import Footer from '../components/shared/layout/Footer/Footer.astro';
 import AboutSection from '../components/tell-me-more-page/AboutSection.astro';
+import Image from 'astro/components/Image.astro';
+import mockupFriendsImg from '@/assets/images/tell-me-more/mockup-friends-choosing.png';
 ---
 
 <Layout>
@@ -12,6 +14,16 @@ import AboutSection from '../components/tell-me-more-page/AboutSection.astro';
   <main>
     <HeroSection />
     <AboutSection />
+
+    <section class="mockup">
+      <div class="mockup__left"></div>
+      <Image
+        src={mockupFriendsImg}
+        alt="friends choosing a spot in London using the FUSS app"
+        fetchpriority="high"
+      />
+      <div class="mockup__right"></div>
+    </section>
   </main>
 
   <Footer />

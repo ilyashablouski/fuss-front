@@ -1,7 +1,7 @@
 ---
-import AppStoreButton from '../../shared/AppStoreButton/AppStoreButton.astro';
-import Typography from '../../shared/Typography/Typography.astro';
-import Button from '../../shared/Button/Button.astro';
+import AppStoreButton from '../../ui/AppStoreButton/AppStoreButton.astro';
+import Typography from '../../ui/Typography/Typography.astro';
+import Button from '../../ui/Button/Button.astro';
 import FussLogo from '@/assets/images/logo.svg';
 import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
 import styles from './Footer.module.scss';
@@ -10,13 +10,13 @@ import styles from './Footer.module.scss';
 <footer class={styles.footer}>
   <div class={styles.footer__wrapper}>
     <div class={styles.footer__left}>
-      <a class="link" href="/">
+      <a class="link" href="/public">
         <FussLogo width={92} />
       </a>
 
       <div class={styles['footer__left-links']}>
-        <a class="link" href="/">Privacy Policy</a>
-        <a class="link" href="/">Terms</a>
+        <a class="link" href="/public">Privacy Policy</a>
+        <a class="link" href="/public">Terms</a>
       </div>
     </div>
     <div class={styles.footer__right}>
