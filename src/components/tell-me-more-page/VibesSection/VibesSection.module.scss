@@ -1,0 +1,33 @@
+.vibes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+
+  &__left {
+    max-width: 581px;
+    text-align: center;
+
+    &-heading {
+      position: relative;
+    }
+
+    &-underline {
+      position: absolute;
+      bottom: -33px;
+      right: 118px;
+      width: 212.61px;
+      height: 47.5px;
+    }
+
+    &-text {
+      margin-top: 32px;
+    }
+  }
+
+  &__right {
+    img {
+      max-width: 100%;
+    }
+  }
+}

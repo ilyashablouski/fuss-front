@@ -1,0 +1,26 @@
+---
+import Image from 'astro/components/Image.astro';
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import styles from './VibesSection.module.scss';
+import UnderlineIcon1 from '@/assets/icons/strokes/underline-1.svg';
+import listOfActivitiesImg from '@/assets/images/tell-me-more/list-of-activities.svg';
+---
+
+<section class={styles.vibes}>
+  <div class={styles.vibes__left}>
+    <div class={styles['vibes__left-heading']}>
+      <UnderlineIcon1 class={styles['vibes__left-underline']} />
+      <Typography variant="h3">Knows your vibe</Typography>
+    </div>
+
+    <div class={styles['vibes__left-text']}>
+      <Typography variant="body2"
+        >You tell us what kind of night you’re feeling (Date at a fancy bar? Group dinner? Chill drinks?
+        Vegan but cool?) We get it. And we recommend only the places that match
+      </Typography>
+    </div>
+  </div>
+  <div class={styles.vibes__right}>
+    <Image src={listOfActivitiesImg} alt="list of activities to choose from" fetchpriority="auto" />
+  </div>
+</section>
