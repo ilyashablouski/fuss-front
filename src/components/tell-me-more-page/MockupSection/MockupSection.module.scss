@@ -1,0 +1,46 @@
+.mockup {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+  max-width: calc(915px + 64px);
+
+  .mockup__left {
+    max-width: 396px;
+
+    &-circle {
+    }
+  }
+
+  .mockup__right {
+    max-width: 519px;
+    text-align: center;
+
+    &-heading {
+      position: relative;
+    }
+
+    &-text {
+      margin-top: 32px;
+    }
+
+    &-circle {
+      position: absolute;
+      top: -27px;
+      right: 9px;
+      z-index: 1;
+      width: 279.5px;
+      height: 100.22px;
+    }
+
+    &-title {
+      position: relative;
+      z-index: 2;
+    }
+  }
+}

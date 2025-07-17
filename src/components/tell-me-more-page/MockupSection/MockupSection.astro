@@ -1,0 +1,30 @@
+---
+import Image from 'astro/components/Image.astro';
+import mockupFriendsImg from '@/assets/images/tell-me-more/mockup-friends-choosing.png';
+import Typography from '../../shared/ui/Typography/Typography.astro';
+import CircleIcon2 from '@/assets/icons/strokes/circle-2.svg';
+import styles from './MockupSection.module.scss';
+---
+
+<section class={styles.mockup}>
+  <div class={styles.mockup__left}>
+    <Image
+      src={mockupFriendsImg}
+      alt="friends choosing a spot in London using the FUSS app"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class={styles.mockup__right}>
+    <div class={styles['mockup__right-heading']}>
+      <CircleIcon2 class={styles['mockup__right-circle']} />
+      <Typography variant="h3" class={styles['mockup__right-title']}>Takes the pressure off</Typography>
+    </div>
+    <div class={styles['mockup__right-text']}>
+      <Typography variant="body2"
+        >No more decision paralysis. No more back-and-forths. Just pick a few options, send the link, and
+        show up
+      </Typography>
+    </div>
+  </div>
+</section>
