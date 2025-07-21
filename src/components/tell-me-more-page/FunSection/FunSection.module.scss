@@ -1,0 +1,30 @@
+.fun {
+  margin-top: 50px;
+  padding: 100px 0;
+  display: flex;
+
+  &__images {
+    margin-left: -150px;
+    margin-right: -150px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__image2 {
+    margin-top: 111px;
+    transform: translateX(-55px);
+  }
+
+  &__image3 {
+    transform: translateX(-90px);
+  }
+
+  &__image4 {
+    margin-top: 107px;
+    transform: translateX(-210px);
+  }
+
+  &__image5 {
+    transform: translateX(-380px);
+  }
+}

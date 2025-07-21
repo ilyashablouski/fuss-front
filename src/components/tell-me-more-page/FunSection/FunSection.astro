@@ -1,0 +1,39 @@
+---
+import Image from 'astro/components/Image.astro';
+import funPrimaryImg1 from '@/assets/images/tell-me-more/fun-primary-1.png';
+import funPrimaryImg2 from '@/assets/images/tell-me-more/fun-primary-2.png';
+import funPrimaryImg3 from '@/assets/images/tell-me-more/fun-primary-3.png';
+import funPrimaryImg4 from '@/assets/images/tell-me-more/fun-primary-4.png';
+import funPrimaryImg5 from '@/assets/images/tell-me-more/fun-primary-5.png';
+import styles from './FunSection.module.scss';
+---
+
+<section class={styles.fun}>
+  <div class={styles.fun__images}>
+    <Image src={funPrimaryImg1} alt="friends having fun in the app" fetchpriority="auto" />
+    <Image
+      src={funPrimaryImg2}
+      class={styles.fun__image2}
+      alt="friends having fun in the app"
+      fetchpriority="auto"
+    />
+    <Image
+      src={funPrimaryImg3}
+      class={styles.fun__image3}
+      alt="friends having fun in the app"
+      fetchpriority="auto"
+    />
+    <Image
+      src={funPrimaryImg4}
+      class={styles.fun__image4}
+      alt="friends having fun in the app"
+      fetchpriority="auto"
+    />
+    <Image
+      src={funPrimaryImg5}
+      class={styles.fun__image5}
+      alt="friends having fun in the app"
+      fetchpriority="auto"
+    />
+  </div>
+</section>
