@@ -1,0 +1,38 @@
+.locations {
+  margin-top: 150px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+
+  &__left {
+    max-width: 500px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__right {
+    max-width: 519px;
+    text-align: center;
+
+    &-heading {
+      position: relative;
+    }
+
+    &-text {
+      margin-top: 32px;
+    }
+
+    &-underline {
+      position: absolute;
+      bottom: -25px;
+      right: 150px;
+      width: 221.17px;
+      height: 26.5px;
+    }
+  }
+}

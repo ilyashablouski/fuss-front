@@ -1,0 +1,25 @@
+---
+import Image from 'astro/components/Image.astro';
+import locationsImg from '@/assets/images/tell-me-more/location-cards.png';
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import UnderlineIcon2 from '@/assets/icons/strokes/underline-2.svg';
+import styles from './LocationsSection.module.scss';
+---
+
+<section class={styles.locations}>
+  <div class={styles.locations__left}>
+    <Image src={locationsImg} alt="List of cool places in London shown in the app" fetchpriority="auto" />
+  </div>
+  <div class={styles.locations__right}>
+    <div class={styles['locations__right-heading']}>
+      <UnderlineIcon2 class={styles['locations__right-underline']} />
+      <Typography variant="h3">Knows the city like a local (but hotter)</Typography>
+    </div>
+    <div class={styles['locations__right-text']}>
+      <Typography variant="body2"
+        >Our picks aren’t random. They’re vetted, vibey, and constantly updated. No clichés. No tourist
+        traps. No “meh”
+      </Typography>
+    </div>
+  </div>
+</section>
