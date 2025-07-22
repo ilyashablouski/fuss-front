@@ -1,5 +1,11 @@
 ---
 import '@/assets/styles/index.scss';
+
+interface Props {
+  withContainer?: boolean;
+}
+
+const { withContainer } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,8 +18,14 @@ import '@/assets/styles/index.scss';
     <title>Astro Basics</title>
   </head>
   <body>
-    <div class="container">
-      <slot />
-    </div>
+    {
+      withContainer ? (
+        <div class="container">
+          <slot />
+        </div>
+      ) : (
+        <slot />
+      )
+    }
   </body>
 </html>
