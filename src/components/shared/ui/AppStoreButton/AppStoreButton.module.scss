@@ -1,4 +1,5 @@
 .appStoreBtn {
-  background: $button-secondary-default !important;
-  color: $text-secondary !important;
+  &:hover {
+    opacity: 0.8;
+  }
 }

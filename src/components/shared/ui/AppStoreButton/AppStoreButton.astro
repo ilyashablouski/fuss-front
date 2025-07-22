@@ -1,6 +1,8 @@
 ---
-import Button from '../Button/Button.astro';
+import AppStoreBadgeIcon from '@/assets/icons/app-store-badge.svg';
 import styles from './AppStoreButton.module.scss';
 ---
 
-<Button class={styles.appStoreBtn} href="/">Download on the app store</Button>
+<a class={styles.appStoreBtn} href="/">
+  <AppStoreBadgeIcon />
+</a>
