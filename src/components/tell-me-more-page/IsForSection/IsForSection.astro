@@ -1,0 +1,66 @@
+---
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import FussLogo from '@/assets/images/logo.svg';
+import styles from './IsForSection.module.scss';
+import Button from '@/components/shared/ui/Button/Button.astro';
+---
+
+<section class={styles.isFor}>
+  <div class={styles.isFor__title}>
+    <FussLogo width={164} color="var(--text-green)" />
+    <Typography variant="h2" style="font-weight: 600;">is for</Typography>
+  </div>
+
+  <div class={styles.isFor__items}>
+    <div class={styles.isFor__item}>
+      <div class={styles['isFor__item-title']}>
+        <Typography variant="heavy" as="span" style="line-height: 1;">📋😵‍💫</Typography>
+      </div>
+      <div class={styles['isFor__item-text']}>
+        <Typography variant="body1" style="font-weight: 600; line-height: 1.125;"
+          >The one who always plans and is this close to burnout💫
+        </Typography>
+      </div>
+    </div>
+    <div class={styles.isFor__item}>
+      <div class={styles['isFor__item-title']}>
+        <Typography variant="heavy" as="span" style="line-height: 1;">🌹😬</Typography>
+      </div>
+      <div class={styles['isFor__item-text']}>
+        <Typography variant="body1" style="font-weight: 600; line-height: 1.125;"
+          >The one trying to plan a great date — without the risk of picking somewhere cringe
+        </Typography>
+      </div>
+    </div>
+    <div class={styles.isFor__item}>
+      <div class={styles['isFor__item-title']}>
+        <Typography variant="heavy" as="span" style="line-height: 1;">🗺️🤷‍♀️</Typography>
+      </div>
+      <div class={styles['isFor__item-text']}>
+        <Typography variant="body1" style="line-height: 1.125;"
+          >The one who just moved to London and doesn’t know where to go
+        </Typography>
+      </div>
+    </div>
+    <div class={styles.isFor__item}>
+      <div class={styles['isFor__item-title']}>
+        <Typography variant="heavy" as="span" style="line-height: 1;">📱👀</Typography>
+      </div>
+      <div class={styles['isFor__item-text']}>
+        <Typography variant="body1" style="line-height: 1.125;"
+          >The one who’s tired of saying “let’s meet up” and never actually meeting up
+        </Typography>
+      </div>
+    </div>
+  </div>
+
+  <div class={styles.isFor__text}>
+    <Typography variant="heavy"
+      >If that’s you — we got you<br /> Now go make plans that actually happen
+    </Typography>
+  </div>
+
+  <div class={styles.isFor__btn}>
+    <Button variant="contained" size="large">Download</Button>
+  </div>
+</section>
