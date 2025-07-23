@@ -103,7 +103,10 @@ const slides = [
   .slider {
     display: flex;
     gap: 21px;
-    animation: scroll 15s ease-out forwards;
+
+    &.start-animation {
+      animation: scroll 15s ease-out forwards;
+    }
 
     &__item {
       width: 227px;
@@ -172,3 +175,25 @@ const slides = [
     </div>
   </div>
 </section>
+
+<script>
+  const slider = document.querySelector('.slider');
+
+  if (slider) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            slider.classList.add('start-animation');
+            observer.unobserve(slider);
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+      },
+    );
+
+    observer.observe(slider);
+  }
+</script>
