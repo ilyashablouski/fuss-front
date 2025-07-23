@@ -2,15 +2,15 @@
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import Image from 'astro/components/Image.astro';
 import appUiPlanWithFriendsImg from '@/assets/images/main/app-ui-plan-with-friends.png';
-import SlideImage1 from '@/assets/images/main/slider/slide-1.png';
-import SlideImage2 from '@/assets/images/main/slider/slide-2.png';
-import SlideImage3 from '@/assets/images/main/slider/slide-3.png';
-import SlideImage4 from '@/assets/images/main/slider/slide-4.png';
-import SlideImage5 from '@/assets/images/main/slider/slide-5.png';
-import SlideImage6 from '@/assets/images/main/slider/slide-6.png';
-import SlideImage7 from '@/assets/images/main/slider/slide-7.png';
-import SlideImage8 from '@/assets/images/main/slider/slide-8.png';
-import SlideImage9 from '@/assets/images/main/slider/slide-9.png';
+import SlideImage1 from '@/assets/images/location-card-1.png';
+import SlideImage2 from '@/assets/images/location-card-2.png';
+import SlideImage3 from '@/assets/images/location-card-3.png';
+import SlideImage4 from '@/assets/images/location-card-4.png';
+import SlideImage5 from '@/assets/images/location-card-5.png';
+import SlideImage6 from '@/assets/images/location-card-6.png';
+import SlideImage7 from '@/assets/images/location-card-7.png';
+import SlideImage8 from '@/assets/images/location-card-8.png';
+import SlideImage9 from '@/assets/images/location-card-9.png';
 
 import FlameSvg from '@/assets/images/main/flame.svg';
 import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton.astro';
@@ -110,6 +110,7 @@ const slides = [
 
     &__item {
       width: 227px;
+      display: inline-flex;
 
       img {
         border-radius: 8px;
@@ -157,6 +158,7 @@ const slides = [
       class="plan-right__image"
       src={appUiPlanWithFriendsImg}
       alt="FUSS app interface showing Plan with Friends feature"
+      fetchpriority="high"
     />
     <div class="plan-right__slider">
       <div class="slider">
