@@ -4,16 +4,23 @@
   flex-direction: column;
   align-items: center;
 
+  @include media-max($md) {
+    margin-top: 100px;
+  }
+
   &__title {
+    text-align: center;
+
     &-extra {
       position: relative;
+      display: inline-flex;
       font-family: 'Caveat', cursive;
       color: var(--text-green);
 
       &::before {
         content: '';
         position: absolute;
-        bottom: -20px;
+        bottom: -36px;
         right: -22px;
         width: 293.1px;
         height: 51.5px;
@@ -21,16 +28,32 @@
         mask-image: var(--underline-icon-url);
         mask-size: contain;
         mask-repeat: no-repeat;
+
+        @include media-max($md) {
+          width: 166.21px;
+          height: 29.2px;
+          bottom: -25px;
+        }
+
       }
     }
   }
 
   &__text {
     margin-top: 24px;
+    text-align: center;
+
+    @include media-max($md) {
+      margin-top: 40px;
+    }
   }
 
   &__btn {
     margin-top: 24px;
+
+    @include media-max($md) {
+      margin-top: 32px;
+    }
   }
 
   &__extra-text {
