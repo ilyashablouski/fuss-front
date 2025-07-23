@@ -1,0 +1,68 @@
+.plan {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 102px;
+
+  &-left {
+    flex: 1 1 450px;
+    max-width: 450px;
+
+    &__heading {
+      &-extra {
+        font-family: $caveat;
+
+        &-green {
+          color: $text-green;
+        }
+
+        &-red {
+          color: $text-red;
+        }
+      }
+    }
+
+    &__text {
+      margin-top: 24px;
+    }
+
+    &__bottom {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__extra-text {
+      margin-left: 16px;
+      flex-shrink: 0;
+    }
+  }
+
+  &-right {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+
+    &__image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      flex-shrink: 1;
+    }
+
+    &__slider {
+      position: absolute;
+      bottom: 112px;
+      left: 35px;
+      overflow: hidden;
+    }
+
+    &__image-flame {
+      margin-left: 63px;
+      position: relative;
+      top: 300px;
+      min-width: 111px;
+    }
+  }
+}
