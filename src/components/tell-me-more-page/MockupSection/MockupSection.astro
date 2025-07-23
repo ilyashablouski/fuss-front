@@ -4,6 +4,8 @@ import mockupFriendsImg from '@/assets/images/tell-me-more/mockup-friends-choosi
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import CircleIcon2 from '@/assets/icons/strokes/circle-2.svg';
 import styles from './MockupSection.module.scss';
+
+const { src: circleIcon2Src } = CircleIcon2;
 ---
 
 <section class={styles.mockup}>
@@ -17,8 +19,12 @@ import styles from './MockupSection.module.scss';
 
   <div class={styles.mockup__right}>
     <div class={styles['mockup__right-heading']}>
-      <CircleIcon2 class={styles['mockup__right-circle']} />
-      <Typography variant="h3" class={styles['mockup__right-title']}>Takes the pressure off</Typography>
+      <Typography
+        variant="h3"
+        class={styles['mockup__right-title']}
+        style={`--circle-icon-url: url(${circleIcon2Src})`}
+        >Takes the <span>pressure&nbsp;off</span>
+      </Typography>
     </div>
     <div class={styles['mockup__right-text']}>
       <Typography variant="body2"

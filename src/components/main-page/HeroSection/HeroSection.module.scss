@@ -1,0 +1,40 @@
+.hero {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    &-extra {
+      position: relative;
+      font-family: 'Caveat', cursive;
+      color: var(--text-green);
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: -22px;
+        width: 293.1px;
+        height: 51.5px;
+        background-color: $icon-red;
+        mask-image: var(--underline-icon-url);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 24px;
+  }
+
+  &__btn {
+    margin-top: 24px;
+  }
+
+  &__extra-text {
+    position: relative;
+    margin-top: 8px;
+  }
+}

@@ -20,19 +20,26 @@
     text-align: center;
 
     &-heading {
-      position: relative;
+      span {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -25px;
+          right: 130px;
+          width: 221.17px;
+          height: 26.5px;
+          background-color: $icon-red;
+          mask-image: var(--underline-icon-url);
+          mask-size: contain;
+          mask-repeat: no-repeat;
+        }
+      }
     }
 
     &-text {
       margin-top: 32px;
-    }
-
-    &-underline {
-      position: absolute;
-      bottom: -25px;
-      right: 150px;
-      width: 221.17px;
-      height: 26.5px;
     }
   }
 }

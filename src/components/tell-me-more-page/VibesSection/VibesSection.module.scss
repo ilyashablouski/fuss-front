@@ -9,15 +9,22 @@
     text-align: center;
 
     &-heading {
-      position: relative;
-    }
+      span {
+        position: relative;
 
-    &-underline {
-      position: absolute;
-      bottom: -33px;
-      right: 118px;
-      width: 212.61px;
-      height: 47.5px;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -42px;
+          right: -14px;
+          width: 212.61px;
+          height: 47.5px;
+          background-color: $icon-red;
+          mask-image: var(--underline-icon-url);
+          mask-size: contain;
+          mask-repeat: no-repeat;
+        }
+      }
     }
 
     &-text {

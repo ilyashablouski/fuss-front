@@ -4,13 +4,16 @@ import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import styles from './VibesSection.module.scss';
 import UnderlineIcon1 from '@/assets/icons/strokes/underline-1.svg';
 import listOfActivitiesImg from '@/assets/images/tell-me-more/list-of-activities.svg';
+
+const { src: underlineIcon1Src } = UnderlineIcon1;
 ---
 
 <section class={styles.vibes}>
   <div class={styles.vibes__left}>
     <div class={styles['vibes__left-heading']}>
-      <UnderlineIcon1 class={styles['vibes__left-underline']} />
-      <Typography variant="h3">Knows your vibe</Typography>
+      <Typography variant="h3" style={`--underline-icon-url: url(${underlineIcon1Src})`}
+        >Knows <span>your&nbsp;vibe</span>
+      </Typography>
     </div>
 
     <div class={styles['vibes__left-text']}>

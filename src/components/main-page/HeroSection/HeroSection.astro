@@ -1,0 +1,28 @@
+---
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import Button from '@/components/shared/ui/Button/Button.astro';
+import UnderlineIcon3 from '@/assets/icons/strokes/underline-3.svg';
+import styles from './HeroSection.module.scss';
+
+const { src: underlineIcon3Src } = UnderlineIcon3;
+---
+
+<section class={styles.hero}>
+  <div class={styles.hero__title}>
+    <Typography variant="h1" style={`--underline-icon-url: url(${underlineIcon3Src})`}
+      >MEET IN <span class={styles['hero__title-extra']}>REAL</span> LIFE
+    </Typography>
+  </div>
+
+  <div class={styles.hero__text}>
+    <Typography variant="body3">Simple and easy way to find a job in real life</Typography>
+  </div>
+
+  <div class={styles.hero__btn}>
+    <Button variant="contained" size="large">Download</Button>
+  </div>
+
+  <div class={styles['hero__extra-text']}>
+    <Typography variant="extra">Android coming soon</Typography>
+  </div>
+</section>

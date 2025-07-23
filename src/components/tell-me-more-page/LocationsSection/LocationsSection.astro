@@ -4,6 +4,8 @@ import locationsImg from '@/assets/images/tell-me-more/location-cards.png';
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import UnderlineIcon2 from '@/assets/icons/strokes/underline-2.svg';
 import styles from './LocationsSection.module.scss';
+
+const { src: underlineIcon2Src } = UnderlineIcon2;
 ---
 
 <section class={styles.locations}>
@@ -12,8 +14,10 @@ import styles from './LocationsSection.module.scss';
   </div>
   <div class={styles.locations__right}>
     <div class={styles['locations__right-heading']}>
-      <UnderlineIcon2 class={styles['locations__right-underline']} />
-      <Typography variant="h3">Knows the city like a local (but hotter)</Typography>
+      <Typography variant="h3" style={`--underline-icon-url: url(${underlineIcon2Src})`}
+        >Knows the city like a local
+        <span>(but hotter)</span></Typography
+      >
     </div>
     <div class={styles['locations__right-text']}>
       <Typography variant="body2"

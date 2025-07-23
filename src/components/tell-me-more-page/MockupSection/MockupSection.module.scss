@@ -29,18 +29,25 @@
       margin-top: 32px;
     }
 
-    &-circle {
-      position: absolute;
-      top: -27px;
-      right: 9px;
-      z-index: 1;
-      width: 279.5px;
-      height: 100.22px;
-    }
 
     &-title {
-      position: relative;
-      z-index: 2;
+      span {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -27px;
+          right: -38px;
+          z-index: -1;
+          width: 279.5px;
+          height: 100.22px;
+          background-color: $icon-red;
+          mask-image: var(--circle-icon-url);
+          mask-size: contain;
+          mask-repeat: no-repeat;
+        }
+      }
     }
   }
 }
