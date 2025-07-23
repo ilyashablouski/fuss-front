@@ -5,50 +5,120 @@ import funPrimaryImg2 from '@/assets/images/tell-me-more/fun-primary-2.jpg';
 import funPrimaryImg3 from '@/assets/images/tell-me-more/fun-primary-3.jpg';
 import funPrimaryImg4 from '@/assets/images/tell-me-more/fun-primary-4.jpg';
 import funPrimaryImg5 from '@/assets/images/tell-me-more/fun-primary-5.jpg';
-import styles from './FunSection.module.scss';
+import funSecondaryImg1 from '@/assets/images/tell-me-more/fun-secondary-1.jpg';
+import funSecondaryImg2 from '@/assets/images/tell-me-more/fun-secondary-2.jpg';
+import funSecondaryImg3 from '@/assets/images/tell-me-more/fun-secondary-3.jpg';
+import funSecondaryImg4 from '@/assets/images/tell-me-more/fun-secondary-4.jpg';
+import funSecondaryImg5 from '@/assets/images/tell-me-more/fun-secondary-5.jpg';
+
+const funImages1 = [funPrimaryImg1, funPrimaryImg2, funPrimaryImg3, funPrimaryImg4, funPrimaryImg5];
+const funImages2 = [
+  funSecondaryImg1,
+  funSecondaryImg2,
+  funSecondaryImg3,
+  funSecondaryImg4,
+  funSecondaryImg5,
+];
 ---
 
-<section class={styles.fun}>
-  <div class={styles.fun__images}>
-    <div class={styles.fun__image}>
-      <Image
-        src={funPrimaryImg1}
-        class={styles.fun__image1}
-        alt="friends having fun in the app"
-        fetchpriority="auto"
-      />
-    </div>
-    <div class={styles.fun__image}>
-      <Image
-        src={funPrimaryImg2}
-        class={styles.fun__image2}
-        alt="friends having fun in the app"
-        fetchpriority="auto"
-      />
-    </div>
-    <div class={styles.fun__image}>
-      <Image
-        src={funPrimaryImg3}
-        class={styles.fun__image3}
-        alt="friends having fun in the app"
-        fetchpriority="auto"
-      />
-    </div>
-    <div class={styles.fun__image}>
-      <Image
-        src={funPrimaryImg4}
-        class={styles.fun__image4}
-        alt="friends having fun in the app"
-        fetchpriority="auto"
-      />
-    </div>
-    <div class={styles.fun__image}>
-      <Image
-        src={funPrimaryImg5}
-        class={styles.fun__image5}
-        alt="friends having fun in the app"
-        fetchpriority="auto"
-      />
-    </div>
+<style lang="scss">
+  .fun {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 0;
+    max-width: 1440px;
+
+    &__images {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__image {
+      display: inline-flex;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__image1 {
+      transform: rotate(-15deg);
+    }
+
+    &__image2 {
+      transform: translateY(15%);
+    }
+
+    &__image3 {
+      transform: rotate(9deg) translateY(-10%);
+    }
+
+    &__image4 {
+      transform: rotate(-24deg) translateY(15%);
+    }
+
+    &__image5 {
+      transform: rotate(13deg);
+    }
+  }
+
+  .fun-image-swap {
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>
+
+<section class="fun">
+  <div class="fun__images">
+    {
+      funImages1.map((image, index) => (
+        <div class="fun__image">
+          <Image
+            src={image}
+            class:list={[`fun__image${index + 1}`, 'fun-image-swap']}
+            alt="friends having fun in the app"
+            fetchpriority="auto"
+          />
+        </div>
+      ))
+    }
   </div>
 </section>
+
+<script define:vars={{ funImages2 }}>
+  const section = document.querySelector('.fun__images');
+  const images = document.querySelectorAll('.fun-image-swap');
+
+  if (section) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let currentIndex = 0;
+
+            const intervalId = setInterval(() => {
+              if (currentIndex < images.length) {
+                const image = images[currentIndex];
+                image.style.opacity = '0';
+                setTimeout(() => {
+                  image.src = funImages2[currentIndex].src;
+                  console.log('funImages2[currentIndex].src:', funImages2[currentIndex].src);
+                  image.style.opacity = '1';
+                }, 300); // Corresponds to transition duration
+                currentIndex++;
+              } else {
+                clearInterval(intervalId);
+              }
+            }, 500); // Time between each image fade
+
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(section);
+  }
+</script>
