@@ -36,10 +36,13 @@ const funImages2 = [
 
     &__image {
       display: inline-flex;
+      flex: 1 1 20%;
+      max-width: 20%;
 
       img {
         width: 100%;
-        height: auto;
+        height: 464.86px;
+        object-fit: cover;
       }
     }
 
@@ -65,7 +68,7 @@ const funImages2 = [
   }
 
   .fun-image-swap {
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
   }
 </style>
 
@@ -92,31 +95,33 @@ const funImages2 = [
 
   if (section) {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      async (entries) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             let currentIndex = 0;
 
-            const intervalId = setInterval(() => {
-              if (currentIndex < images.length) {
-                const image = images[currentIndex];
+            // Helper function for delay
+            const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+            while (currentIndex < images.length && currentIndex < funImages2.length) {
+              const image = images[currentIndex];
+              if (image && funImages2[currentIndex]) {
                 image.style.opacity = '0';
-                setTimeout(() => {
-                  image.src = funImages2[currentIndex].src;
-                  console.log('funImages2[currentIndex].src:', funImages2[currentIndex].src);
-                  image.style.opacity = '1';
-                }, 300); // Corresponds to transition duration
-                currentIndex++;
+                await delay(100); // Wait for fade-out animation
+                image.src = funImages2[currentIndex].src;
+                image.style.opacity = '1';
+                currentIndex++; // Increment after animation completes
+                await delay(100); // Additional pause between images
               } else {
-                clearInterval(intervalId);
+                break; // Exit loop if elements are unavailable
               }
-            }, 500); // Time between each image fade
+            }
 
             observer.unobserve(entry.target); // Animate only once
           }
-        });
+        }
       },
-      { threshold: 0 },
+      { threshold: 0.5 },
     );
 
     observer.observe(section);
