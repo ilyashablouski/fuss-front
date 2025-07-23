@@ -1,0 +1,13 @@
+.bottom-section {
+  margin-top: 100px;
+
+  &__text {
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+}

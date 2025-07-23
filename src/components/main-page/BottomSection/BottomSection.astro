@@ -1,0 +1,17 @@
+---
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import Button from '@/components/shared/ui/Button/Button.astro';
+import styles from './BottomSection.module.scss';
+---
+
+<section class={styles['bottom-section']}>
+  <div class={styles['bottom-section__text']}>
+    <Typography variant="heavy"
+      >Create your list, invite your crew, vote together, and lock in a spot you'll all love
+    </Typography>
+  </div>
+
+  <div class={styles['bottom-section__btn']}>
+    <Button variant="contained" size="large">Download</Button>
+  </div>
+</section>
