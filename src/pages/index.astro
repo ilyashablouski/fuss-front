@@ -9,6 +9,12 @@ import Footer from '@/components/shared/layout/Footer/Footer.astro';
 ---
 
 <style lang="scss">
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+  }
+
   .bottom-section {
     margin-top: 100px;
 
@@ -24,25 +30,29 @@ import Footer from '@/components/shared/layout/Footer/Footer.astro';
   }
 </style>
 
-<Layout withContainer>
-  <Header />
+<Layout>
+  <div class="wrapper">
+    <div class="container">
+      <Header />
 
-  <main>
-    <HeroSection />
-    <PlanSection />
+      <main>
+        <HeroSection />
+        <PlanSection />
 
-    <section class="bottom-section">
-      <div class="bottom-section__text">
-        <Typography variant="heavy"
-          >Create your list, invite your crew, vote together, and lock in a spot you'll all love
-        </Typography>
-      </div>
+        <section class="bottom-section">
+          <div class="bottom-section__text">
+            <Typography variant="heavy"
+              >Create your list, invite your crew, vote together, and lock in a spot you'll all love
+            </Typography>
+          </div>
 
-      <div class="bottom-section__btn">
-        <Button variant="contained" size="large">Download</Button>
-      </div>
-    </section>
-  </main>
+          <div class="bottom-section__btn">
+            <Button variant="contained" size="large">Download</Button>
+          </div>
+        </section>
+      </main>
 
-  <Footer />
+      <Footer />
+    </div>
+  </div>
 </Layout>

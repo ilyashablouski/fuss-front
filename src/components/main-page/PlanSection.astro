@@ -14,6 +14,18 @@ import SlideImage9 from '@/assets/images/main/slider/slide-9.png';
 
 import FlameSvg from '@/assets/images/main/flame.svg';
 import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton.astro';
+
+const slides = [
+  SlideImage1,
+  SlideImage2,
+  SlideImage3,
+  SlideImage4,
+  SlideImage5,
+  SlideImage6,
+  SlideImage7,
+  SlideImage8,
+  SlideImage9,
+];
 ---
 
 <style lang="scss">
@@ -74,6 +86,7 @@ import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton
         position: absolute;
         bottom: 112px;
         left: 35px;
+        overflow: hidden;
       }
 
       &__image-flame {
@@ -90,8 +103,23 @@ import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton
   .slider {
     display: flex;
     gap: 21px;
+    animation: scroll 15s ease-out forwards;
 
     &__item {
+      width: 227px;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% + (227px)));
+      }
     }
   }
 </style>
@@ -129,15 +157,13 @@ import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton
     />
     <div class="plan-right__slider">
       <div class="slider">
-        <div class="slider__item">
-          <Image src={SlideImage1} alt="slide 1 image" />
-        </div>
-        <div class="slider__item">
-          <Image src={SlideImage1} alt="slide 1 image" />
-        </div>
-        <div class="slider__item">
-          <Image src={SlideImage1} alt="slide 1 image" />
-        </div>
+        {
+          slides.map((slide, index) => (
+            <div class="slider__item">
+              <Image src={slide} alt={`slide ${index + 1} image`} />
+            </div>
+          ))
+        }
       </div>
     </div>
 
