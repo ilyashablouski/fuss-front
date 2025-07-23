@@ -7,12 +7,20 @@
   gap: 64px;
 
   &__left {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
     max-width: 500px;
 
     img {
       max-width: 100%;
       height: auto;
     }
+  }
+
+  &__item {
+    flex: 1 1 calc(33.33% - 14px * 2);
   }
 
   &__right {
@@ -22,12 +30,13 @@
     &-heading {
       span {
         position: relative;
+        display: inline-flex;
 
         &::before {
           content: '';
           position: absolute;
           bottom: -25px;
-          right: 130px;
+          right: 0;
           width: 221.17px;
           height: 26.5px;
           background-color: $icon-red;

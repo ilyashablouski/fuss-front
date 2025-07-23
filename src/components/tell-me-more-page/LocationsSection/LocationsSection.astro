@@ -1,23 +1,48 @@
 ---
 import Image from 'astro/components/Image.astro';
-import locationsImg from '@/assets/images/tell-me-more/location-cards.png';
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import UnderlineIcon2 from '@/assets/icons/strokes/underline-2.svg';
 import styles from './LocationsSection.module.scss';
 
+import LocationCard1 from '@/assets/images/location-card-1.png';
+import LocationCard2 from '@/assets/images/location-card-2.png';
+import LocationCard3 from '@/assets/images/location-card-3.png';
+import LocationCard4 from '@/assets/images/location-card-4.png';
+import LocationCard5 from '@/assets/images/location-card-5.png';
+import LocationCard6 from '@/assets/images/location-card-6.png';
+import LocationCard7 from '@/assets/images/location-card-7.png';
+import LocationCard8 from '@/assets/images/location-card-8.png';
+import LocationCard9 from '@/assets/images/location-card-9.png';
+
+const cards = [
+  LocationCard1,
+  LocationCard2,
+  LocationCard3,
+  LocationCard4,
+  LocationCard5,
+  LocationCard6,
+  LocationCard7,
+  LocationCard8,
+  LocationCard9,
+];
 const { src: underlineIcon2Src } = UnderlineIcon2;
 ---
 
 <section class={styles.locations}>
   <div class={styles.locations__left}>
-    <Image src={locationsImg} alt="List of cool places in London shown in the app" fetchpriority="auto" />
+    {
+      cards.map((card, index) => (
+        <div class={styles.locations__item}>
+          <Image src={card} alt={`Cool place ${index + 1} in London shown in the app image`} />
+        </div>
+      ))
+    }
   </div>
   <div class={styles.locations__right}>
     <div class={styles['locations__right-heading']}>
       <Typography variant="h3" style={`--underline-icon-url: url(${underlineIcon2Src})`}
-        >Knows the city like a local
-        <span>(but hotter)</span></Typography
-      >
+        >Knows the city like a local <span>(but hotter)</span>
+      </Typography>
     </div>
     <div class={styles['locations__right-text']}>
       <Typography variant="body2"
