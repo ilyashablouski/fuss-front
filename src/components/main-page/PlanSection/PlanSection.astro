@@ -13,6 +13,8 @@ import SlideImage8 from '@/assets/images/location-card-8.png';
 import SlideImage9 from '@/assets/images/location-card-9.png';
 import FlameSvg from '@/assets/images/main/flame.svg';
 import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton.astro';
+import Slider from '@/components/shared/ui/Slider/Slider.astro';
+
 import styles from './PlanSection.module.scss';
 
 const slides = [
@@ -27,35 +29,6 @@ const slides = [
   SlideImage9,
 ];
 ---
-
-<style lang="scss">
-  .slider {
-    display: flex;
-    gap: 21px;
-
-    &.start-animation {
-      animation: scroll 15s ease-out forwards;
-    }
-
-    &__item {
-      width: 227px;
-      display: inline-flex;
-
-      img {
-        border-radius: 8px;
-      }
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(calc(-100% + (227px)));
-      }
-    }
-  }
-</style>
 
 <section class={styles.plan}>
   <div class={styles['plan-left']}>
@@ -93,41 +66,11 @@ const slides = [
       fetchpriority="high"
     />
     <div class={styles['plan-right__slider']}>
-      <div class="slider">
-        {
-          slides.map((slide, index) => (
-            <div class="slider__item">
-              <Image src={slide} alt={`Cool place ${index + 1} in London shown in the app image`} />
-            </div>
-          ))
-        }
-      </div>
+      <Slider slides={slides} />
     </div>
 
     <div class={styles['plan-right__image-flame']}>
-      <FlameSvg width={111} height={179} />
+      <FlameSvg />
     </div>
   </div>
 </section>
-
-<script>
-  const slider = document.querySelector('.slider');
-
-  if (slider) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            slider.classList.add('start-animation');
-            observer.unobserve(slider);
-          }
-        });
-      },
-      {
-        threshold: 0.01,
-      },
-    );
-
-    observer.observe(slider);
-  }
-</script>

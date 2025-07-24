@@ -5,6 +5,10 @@
   align-items: center;
   gap: 102px;
 
+  @include media-max($lg) {
+    gap: 32px;
+  }
+
   &-left {
     flex: 1 1 450px;
     max-width: 450px;
@@ -40,15 +44,21 @@
   }
 
   &-right {
+    margin-right: 174px;
     position: relative;
     display: flex;
-    flex: 1 1 auto;
+
+    @include media-max($lg) {
+      margin-right: 0;
+    }
 
     &__image {
-      width: 100%;
-      max-width: 100%;
+      width: 414.47px;
       height: auto;
-      flex-shrink: 1;
+
+      @include media-max($lg) {
+        width: 251.64px;
+      }
     }
 
     &__slider {
@@ -59,10 +69,18 @@
     }
 
     &__image-flame {
-      margin-left: 63px;
-      position: relative;
-      top: 300px;
-      min-width: 111px;
+      position: absolute;
+      top: 230px;
+      right: -174px;
+      width: 111px;
+      height: 179px;
+
+      @include media-max($lg) {
+        top: 171px;
+        right: -20px;
+        width: 67.39px;
+        height: 108.68px;
+      }
     }
   }
 }

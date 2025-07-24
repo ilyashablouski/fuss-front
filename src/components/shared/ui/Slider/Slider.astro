@@ -1,0 +1,72 @@
+---
+import Image from 'astro/components/Image.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  slides: ImageMetadata[];
+  class?: string;
+}
+
+const { slides, class: className } = Astro.props;
+---
+
+<style lang="scss">
+  .slider {
+    display: flex;
+    gap: 21px;
+
+    &.start-animation {
+      animation: scroll 15s ease-out forwards;
+    }
+
+    &__item {
+      max-width: 227px;
+      display: inline-flex;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% + (227px)));
+      }
+    }
+  }
+</style>
+
+<div class:list={['slider', className]}>
+  {
+    slides.map((slide, index) => (
+      <div class="slider__item">
+        <Image src={slide} alt={`Cool place ${index + 1} in London shown in the app image`} />
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  const slider = document.querySelector('.slider');
+
+  if (slider) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            slider.classList.add('start-animation');
+            observer.unobserve(slider);
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+      },
+    );
+
+    observer.observe(slider);
+  }
+</script>
