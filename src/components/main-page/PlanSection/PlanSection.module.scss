@@ -1,5 +1,6 @@
 .plan {
   margin-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +12,9 @@
 
   @include media-max($md) {
     margin-top: 50px;
+    padding-bottom: 50px;
     flex-direction: column;
+    gap: 0;
   }
 
   &-left {
@@ -21,6 +24,7 @@
     @include media-max($md) {
       margin-top: 40px;
       order: 2;
+      flex: 1 1 auto;
     }
 
     &__heading {
