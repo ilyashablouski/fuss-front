@@ -66,6 +66,11 @@
       bottom: 112px;
       left: 35px;
       overflow: hidden;
+
+      @include media-max($lg) {
+        bottom: 65px;
+        left: 24px;
+      }
     }
 
     &__image-flame {
