@@ -6,13 +6,27 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include media-max($md) {
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 
   &__left {
+    @include media-max($md) {
+      text-align: center;
+    }
+
     &-links {
       margin-top: 32px;
       display: flex;
       gap: 32px;
+
+      @include media-max($md) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
@@ -20,6 +34,10 @@
     display: flex;
     height: fit-content;
     gap: 32px;
+
+    @include media-max($md) {
+      justify-content: space-between;
+    }
   }
 
   &__bottom {

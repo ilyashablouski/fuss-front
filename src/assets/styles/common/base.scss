@@ -88,7 +88,11 @@ a {
 
 .link {
   color: $text-primary;
-  font-size: 24px;
+  font-size: rem($fs-24);
   font-weight: 500;
   line-height: 1.33;
+
+  @include media-max($md) {
+    font-size: rem($fs-20);
+  }
 }
