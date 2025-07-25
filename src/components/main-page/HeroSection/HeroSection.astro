@@ -3,6 +3,7 @@ import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import Button from '@/components/shared/ui/Button/Button.astro';
 import UnderlineIcon3 from '@/assets/icons/strokes/underline-3.svg';
 import styles from './HeroSection.module.scss';
+import { URLS } from '@/constants.ts';
 
 const { src: underlineIcon3Src } = UnderlineIcon3;
 ---
@@ -19,7 +20,7 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
   </div>
 
   <div class={styles.hero__btn}>
-    <Button variant="contained" size="large">Download</Button>
+    <Button href={URLS.appStore} variant="contained" size="large">Download</Button>
   </div>
 
   <div class={styles['hero__extra-text']}>

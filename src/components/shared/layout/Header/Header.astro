@@ -1,6 +1,7 @@
 ---
 import FussLogo from '@/assets/images/logo.svg';
 import Button from '@/components/shared/ui/Button/Button.astro';
+import { URLS } from '@/constants';
 import styles from './Header.module.scss';
 ---
 
@@ -9,5 +10,5 @@ import styles from './Header.module.scss';
     <FussLogo width={92} />
   </a>
 
-  <Button variant="contained" size="large">Download</Button>
+  <Button href={URLS.appStore} variant="contained" size="large">Download</Button>
 </header>

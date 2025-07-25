@@ -3,6 +3,7 @@ import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import FussLogo from '@/assets/images/logo.svg';
 import styles from './IsForSection.module.scss';
 import Button from '@/components/shared/ui/Button/Button.astro';
+import { URLS } from '@/constants.ts';
 ---
 
 <section class={styles.isFor}>
@@ -61,6 +62,6 @@ import Button from '@/components/shared/ui/Button/Button.astro';
   </div>
 
   <div class={styles.isFor__btn}>
-    <Button variant="contained" size="large">Download</Button>
+    <Button href={URLS.appStore} variant="contained" size="large">Download</Button>
   </div>
 </section>

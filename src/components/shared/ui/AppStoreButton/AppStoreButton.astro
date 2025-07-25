@@ -1,6 +1,7 @@
 ---
 import AppStoreBadgeIcon from '@/assets/icons/app-store-badge.svg';
 import AppStoreBadgeSmallIcon from '@/assets/icons/app-store-badge-small.svg';
+import { URLS } from '@/constants';
 
 import styles from './AppStoreButton.module.scss';
 
@@ -11,6 +12,6 @@ interface Props {
 const { isSmall } = Astro.props;
 ---
 
-<a href="/">
+<a href={URLS.appStore} class={styles.appStoreBtn}>
   {isSmall ? <AppStoreBadgeSmallIcon /> : <AppStoreBadgeIcon />}
 </a>

@@ -4,6 +4,7 @@ import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import Button from '@/components/shared/ui/Button/Button.astro';
 import FussLogo from '@/assets/images/logo.svg';
 import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
+import { URLS } from '@/constants';
 import styles from './Footer.module.scss';
 ---
 
@@ -27,7 +28,7 @@ import styles from './Footer.module.scss';
   <div class={styles.footer__bottom}>
     <Typography variant="small" aria-label="copyright">© 2025 FUSS. All rights reserved.</Typography>
 
-    <a class="link" href="https://www.instagram.com/fuss.london" target="_blank">
+    <a class="link" href={URLS.instagram} target="_blank">
       <InstagramIcon />
     </a>
   </div>
