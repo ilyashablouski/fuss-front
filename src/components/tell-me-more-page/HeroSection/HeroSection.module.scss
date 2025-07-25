@@ -9,7 +9,6 @@
 
   @include media-max($md) {
     margin-top: 100px;
-    padding-bottom: 0;
     flex-direction: column;
     gap: 32px;
   }

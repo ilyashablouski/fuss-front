@@ -1,9 +1,17 @@
 .about {
   margin-top: 150px;
 
+  @include media-max($md) {
+    margin-top: 100px;
+  }
+
   &__heading {
     padding-bottom: 50px;
     text-align: center;
+
+    @include media-max($md) {
+      padding-bottom: 32px;
+    }
   }
 
   &__wrapper {
@@ -12,14 +20,25 @@
     justify-content: space-between;
     align-items: center;
     gap: 64px;
+
+    @include media-max($md) {
+      flex-direction: column;
+      gap: 16px;
+    }
   }
 
   &__left {
     max-width: 519px;
 
+    @include media-max($md) {
+      order: 2;
+      text-align: center;
+    }
+
     &-title {
       span {
         position: relative;
+        display: inline-flex;
         font-weight: 600;
 
         &::before {
@@ -33,16 +52,31 @@
           mask-image: var(--circleIcon1);
           mask-size: contain;
           mask-repeat: no-repeat;
+
+          @include media-max($md) {
+            left: -16px;
+            top: -16px;
+            width: 162px;
+            height: 64px;
+            mask-image: var(--circleIcon3);
+          }
         }
       }
     }
 
     &-text {
       margin-top: 32px;
+      @include media-max($md) {
+        margin-top: 16px;
+      }
     }
   }
 
   &__right {
+    @include media-max($md) {
+      order: 1;
+    }
+
     img {
       max-width: 100%;
       height: auto;
