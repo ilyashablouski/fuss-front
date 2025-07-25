@@ -1,70 +1,39 @@
 ---
-import Typography from '../shared/ui/Typography/Typography.astro';
-import AppStoreButton from '../shared/ui/AppStoreButton/AppStoreButton.astro';
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton.astro';
 import Image from 'astro/components/Image.astro';
 import actionsInAppImg from '@/assets/images/tell-me-more/actions-in-app.png';
+
+import styles from './HeroSection.module.scss';
 ---
 
-<style lang="scss">
-  .hero {
-    margin-top: 150px;
-    padding-bottom: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 64px;
-
-    &__left {
-      max-width: 764px;
-    }
-
-    &__right {
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    &__text {
-      margin-top: 24px;
-    }
-
-    &__apps {
-      margin-top: 44px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-  }
-</style>
-
-<section class="hero">
-  <div class="hero__left">
+<section class={styles.hero}>
+  <div class={styles.hero__left}>
     <Typography variant="h2" style="font-size: 80px">Glad you asked</Typography>
 
-    <div class="hero__text">
+    <div class={styles.hero__text}>
       <Typography variant="body1"
         >You know that awkward “where should we go?” moment that kills the vibe before the night even
         starts? Yeah, we murdered it
       </Typography>
     </div>
 
-    <div class="hero__text">
+    <div class={styles.hero__text}>
       <Typography variant="body1"
         >FUSS helps you and your friends actually pick a place to meet — quickly, painlessly, and without
         anyone crying into Google Maps
       </Typography>
     </div>
 
-    <div class="hero__apps">
+    <div class={styles.hero__apps}>
       <AppStoreButton />
 
-      <div class="hero__apps-extra-text">
+      <div class={styles['hero__apps-extra-text']}>
         <Typography variant="extra">Android coming soon</Typography>
       </div>
     </div>
   </div>
-  <div class="hero__right">
+  <div class={styles.hero__right}>
     <Image src={actionsInAppImg} alt="Actions in the app" fetchpriority="high" />
   </div>
 </section>

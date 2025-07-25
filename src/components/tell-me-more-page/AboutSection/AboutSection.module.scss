@@ -1,0 +1,51 @@
+.about {
+  margin-top: 150px;
+
+  &__heading {
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  &__wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__left {
+    max-width: 519px;
+
+    &-title {
+      span {
+        position: relative;
+        font-weight: 600;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -25px;
+          top: -30px;
+          width: 223.21px;
+          height: 114.88px;
+          background-color: $icon-red;
+          mask-image: var(--circleIcon1);
+          mask-size: contain;
+          mask-repeat: no-repeat;
+        }
+      }
+    }
+
+    &-text {
+      margin-top: 32px;
+    }
+  }
+
+  &__right {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
