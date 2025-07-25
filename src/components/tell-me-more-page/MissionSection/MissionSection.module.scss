@@ -3,6 +3,16 @@
   padding-bottom: 150px;
   text-align: center;
 
+  @include media-max($md) {
+    margin-top: 100px;
+  }
+
+  &__title {
+    @include media-max($md) {
+      font-size: 40px;
+    }
+  }
+
   &__text {
     margin-top: 24px;
   }
