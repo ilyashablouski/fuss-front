@@ -11,6 +11,8 @@ import funSecondaryImg3 from '@/assets/images/tell-me-more/fun-secondary-3.jpg';
 import funSecondaryImg4 from '@/assets/images/tell-me-more/fun-secondary-4.jpg';
 import funSecondaryImg5 from '@/assets/images/tell-me-more/fun-secondary-5.jpg';
 
+import styles from './FunSection.module.scss';
+
 const funImages1 = [funPrimaryImg1, funPrimaryImg2, funPrimaryImg3, funPrimaryImg4, funPrimaryImg5];
 const funImages2 = [
   funSecondaryImg1,
@@ -22,65 +24,19 @@ const funImages2 = [
 ---
 
 <style lang="scss">
-  .fun {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 100px 0;
-    max-width: 1440px;
-    overflow: hidden;
-
-    &__images {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &__image {
-      display: inline-flex;
-      flex: 1 1 20%;
-      max-width: 20%;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &__image1 {
-      transform: rotate(-15deg);
-    }
-
-    &__image2 {
-      transform: translateY(15%);
-    }
-
-    &__image3 {
-      transform: rotate(9deg) translateY(-10%);
-    }
-
-    &__image4 {
-      transform: rotate(-24deg) translateY(15%);
-    }
-
-    &__image5 {
-      transform: rotate(13deg);
-    }
-  }
-
   .fun-image-swap {
     transition: opacity 0.1s ease-in-out;
   }
 </style>
 
-<section class="fun">
-  <div class="fun__images">
+<section class={styles.fun}>
+  <div class={styles.fun__images}>
     {
       funImages1.map((image, index) => (
-        <div class="fun__image">
+        <div class={styles.fun__image}>
           <Image
             src={image}
-            class:list={[`fun__image${index + 1}`, 'fun-image-swap']}
+            class:list={[styles[`fun__image${index + 1}`], 'fun__images', 'fun-image-swap']}
             alt="friends having fun in the app"
             fetchpriority="auto"
           />
