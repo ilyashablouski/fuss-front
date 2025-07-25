@@ -44,7 +44,7 @@
     line-height: 1.33;
 
     @include media-max($md) {
-      font-size: rem($fs-24);
+      font-size: rem($fs-20);
       line-height: 1;
     }
   }

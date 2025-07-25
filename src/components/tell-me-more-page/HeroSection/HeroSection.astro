@@ -3,13 +3,21 @@ import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import AppStoreButton from '@/components/shared/ui/AppStoreButton/AppStoreButton.astro';
 import Image from 'astro/components/Image.astro';
 import actionsInAppImg from '@/assets/images/tell-me-more/actions-in-app.png';
-
 import styles from './HeroSection.module.scss';
+
+import UnderlineIcon4 from '@/assets/icons/strokes/underline-4.svg';
+
+const { src: underlineIcon4Src } = UnderlineIcon4;
 ---
 
 <section class={styles.hero}>
   <div class={styles.hero__left}>
-    <Typography variant="h2" style="font-size: 80px">Glad you asked</Typography>
+    <Typography
+      variant="h2"
+      class={styles['hero__left-title']}
+      style={`--underline-icon-url: url(${underlineIcon4Src})`}
+      >Glad <span>you&nbsp;asked</span>
+    </Typography>
 
     <div class={styles.hero__text}>
       <Typography variant="body1"
