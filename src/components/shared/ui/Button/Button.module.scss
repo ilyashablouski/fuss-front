@@ -1,5 +1,4 @@
 .button {
-  position: relative;
   margin: 0;
   display: inline-flex;
   align-items: center;
@@ -16,6 +15,7 @@
   font-weight: 700;
   user-select: none;
   cursor: pointer;
+  @include transition();
 
   // --- Sizes ---
   &.small {
@@ -56,17 +56,33 @@
   &.contained {
     background: $button-primary-default;
 
-    //&:hover {
-    //  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    //}
+    &:hover {
+      background: $button-primary-hover;
+    }
+
+    &:active {
+      background: $button-primary-active;
+    }
+
+    &:disabled {
+      background: $button-primary-disabled;
+    }
   }
 
   &.outlined {
     border: 1px solid $button-primary-default;
 
-    //&:hover {
-    //  background-color: rgba(190, 255, 125, 0.08); // Fallback, ideally use CSS var
-    //}
+    &:hover {
+      background: $button-primary-hover;
+    }
+
+    &:active {
+      background: $button-primary-active;
+    }
+
+    &:disabled {
+      background: $button-primary-disabled;
+    }
   }
 
   // --- Colors ---
