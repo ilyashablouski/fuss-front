@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  width: max-content;
+  height: min-content;
 
   -webkit-tap-highlight-color: transparent;
   background: transparent;
@@ -27,7 +29,6 @@
   &.medium {
     padding: 16px 24px;
     font-size: rem($fs-17);
-    font-weight: 600;
     line-height: 1.41;
   }
 
@@ -73,15 +74,15 @@
     border: 1px solid $button-primary-default;
 
     &:hover {
-      background: $button-primary-hover;
+      color: $button-primary-hover;
     }
 
     &:active {
-      background: $button-primary-active;
+      color: $button-primary-active;
     }
 
     &:disabled {
-      background: $button-primary-disabled;
+      color: $button-primary-disabled;
     }
   }
 
@@ -89,7 +90,6 @@
 
   &.primary {
     color: $text-secondary;
-    //предлагаю hover сюда
   }
 
   &.secondary {

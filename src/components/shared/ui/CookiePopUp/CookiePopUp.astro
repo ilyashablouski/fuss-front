@@ -1,0 +1,91 @@
+---
+import Typography from '@/components/shared/ui/Typography/Typography.astro';
+import Button from '@/components/shared/ui/Button/Button.astro';
+---
+
+<div class="cookie">
+  <div class="cookie__left">
+    <Typography variant="small"
+      >We value your privacy. This site only uses cookies where necessary to improve your experience and
+      keep your interactions smooth. We never sell your data. See <a class="link" href="/privacy-policy"
+        >Privacy Policy</a
+      >.
+    </Typography>
+  </div>
+  <div class="cookie__right">
+    <Button variant="outlined" size="medium" color="secondary">Reject cookies</Button>
+    <Button variant="contained" size="medium">Accept cookies</Button>
+  </div>
+</div>
+
+<style lang="scss">
+  .cookie {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    background: $bg-primary;
+    border: 1px solid $border-default;
+    border-radius: $border-radius-default;
+
+    @include media-max($md) {
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__left {
+      .link {
+        font-size: rem($fs-base);
+        color: $text-green;
+      }
+    }
+
+    &__right {
+      display: flex;
+      gap: 16px;
+
+      @include media-max($md) {
+        flex-direction: column;
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookiePopUp = document.querySelector('[class*="cookie"]');
+    const consent = localStorage.getItem('cookie_consent');
+
+    if (!cookiePopUp || consent) return;
+
+    const acceptButton = cookiePopUp.querySelector('[class*="cookie__right"] button:last-child');
+    const rejectButton = cookiePopUp.querySelector('[class*="cookie__right"] button:first-child');
+
+    if (!consent) {
+      cookiePopUp.style.display = 'flex';
+    }
+
+    const handleConsent = () => {
+      localStorage.setItem('cookie_consent', 'true');
+      cookiePopUp.style.display = 'none';
+    };
+
+    if (acceptButton) {
+      acceptButton.addEventListener('click', handleConsent);
+    }
+    if (rejectButton) {
+      rejectButton.addEventListener('click', handleConsent);
+    }
+  });
+</script>
