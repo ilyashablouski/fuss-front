@@ -6,12 +6,30 @@
   align-items: center;
   gap: 64px;
 
+  @include media-max($lg) {
+    gap: 32px;
+  }
+
+  @include media-max($md) {
+    margin-top: 112px;
+    padding: 0;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   &__left {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 14px;
     max-width: 500px;
+
+    @include media-max($md) {
+      flex-wrap: nowrap;
+      max-width: 100%;
+      gap: 21px;
+      overflow-x: scroll;
+    }
 
     img {
       max-width: 100%;
@@ -20,12 +38,26 @@
   }
 
   &__item {
+    display: inline-flex;
     flex: 1 1 calc(33.33% - 14px * 2);
+
+    @include media-max($md) {
+      flex: 1 0 227px;
+    }
   }
 
   &__right {
     max-width: 519px;
     text-align: center;
+
+    @include media-max($lg) {
+      min-width: 320px;
+    }
+
+    @include media-max($md) {
+      min-width: auto;
+    }
+
 
     &-heading {
       span {
@@ -43,12 +75,22 @@
           mask-image: var(--underline-icon-url);
           mask-size: contain;
           mask-repeat: no-repeat;
+
+          @include media-max($md) {
+            bottom: -23px;
+            right: 16px;
+            width: 166px;
+            height: 23px;
+          }
         }
       }
     }
 
     &-text {
       margin-top: 32px;
+      @include media-max($md) {
+        margin-top: 16px;
+      }
     }
   }
 }
