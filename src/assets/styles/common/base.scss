@@ -82,7 +82,7 @@ a {
   cursor: pointer;
 
   &:hover {
-    color: $text-red !important;
+    color: $text-red;
     @include transition();
   }
 }

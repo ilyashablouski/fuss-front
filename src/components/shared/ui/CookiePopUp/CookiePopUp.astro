@@ -43,6 +43,11 @@ import Button from '@/components/shared/ui/Button/Button.astro';
       .link {
         font-size: rem($fs-base);
         color: $text-green;
+
+        &:hover {
+          color: $text-red;
+          @include transition();
+        }
       }
     }
 
