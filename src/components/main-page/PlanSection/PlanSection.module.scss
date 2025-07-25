@@ -51,7 +51,7 @@
       @include media-max($md) {
         text-align: center;
         * {
-          font-size: 24px;
+          font-size: rem($fs-24);
         }
       }
     }

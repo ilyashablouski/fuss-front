@@ -1,6 +1,5 @@
 .mission {
   margin-top: 150px;
-  padding-bottom: 150px;
   text-align: center;
 
   @include media-max($md) {
@@ -9,7 +8,7 @@
 
   &__title {
     @include media-max($md) {
-      font-size: 40px;
+      font-size: rem($fs-40);
     }
   }
 
