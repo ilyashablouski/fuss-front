@@ -61,21 +61,21 @@
 
   &__right {
     display: inline-flex;
+    max-width: 495.32px;
+    min-width: 405px;
+
+    @include media-max($lg) {
+      min-width: 360px;
+    }
     @include media-max($md) {
       order: 1;
+      max-width: 361px;
+      min-width: auto;
     }
 
     img {
-      min-width: 405px;
       max-width: 100%;
-
-      @include media-max($lg) {
-        min-width: 350px;
-      }
-
-      @include media-max($md) {
-        min-width: 244.5px;
-      }
+      height: auto;
     }
   }
 }

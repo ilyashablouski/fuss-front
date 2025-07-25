@@ -21,6 +21,10 @@
     align-items: center;
     gap: 64px;
 
+    @include media-max($lg) {
+      gap: 32px;
+    }
+
     @include media-max($md) {
       flex-direction: column;
       gap: 16px;
@@ -29,6 +33,7 @@
 
   &__left {
     max-width: 519px;
+    text-align: center;
 
     @include media-max($md) {
       order: 2;
@@ -73,7 +78,18 @@
   }
 
   &__right {
+    display: inline-flex;
+    max-width: 644.28px;
+    min-width: 500px;
+
+    @include media-max($lg) {
+      min-width: 400px;
+      gap: 32px;
+    }
+
     @include media-max($md) {
+      max-width: 361px;
+      min-width: auto;
       order: 1;
     }
 

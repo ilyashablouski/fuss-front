@@ -6,11 +6,13 @@
   align-items: center;
   gap: 64px;
 
+  @include media-max($lg) {
+    gap: 32px;
+  }
 
   @include media-max($md) {
     margin-top: 100px;
     flex-direction: column;
-    gap: 32px;
   }
 
   &__left {
@@ -50,18 +52,22 @@
 
   &__right {
     display: inline-flex;
+    max-width: 312.3px;
+    min-width: 312.3px;
+
+    @include media-max($lg) {
+      min-width: 260px;
+    }
 
     @include media-max($md) {
       order: 1;
+      max-width: 211px;
+      min-width: auto;
     }
 
     img {
-      width: 312.3px;
+      max-width: 100%;
       height: auto;
-
-      @include media-max($lg) {
-        width: 211px;
-      }
     }
   }
 
