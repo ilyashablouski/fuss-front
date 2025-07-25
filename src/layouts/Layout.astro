@@ -2,8 +2,10 @@
 import '@/assets/styles/index.scss';
 
 interface Props {
-  withContainer?: boolean;
+  title: string;
 }
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,8 +14,21 @@ interface Props {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta
+      name="description"
+      content="FUSS helps you pick the perfect spot in London for dates or group meetups. Create your list, vote with friends, and lock in a plan that happens."
+    />
+    <meta property="og:title" content="Plan real-life meetups in London with FUSS" />
+    <meta
+      property="og:description"
+      content="Tired of plans dying in the group chat? FUSS makes it easy to choose a spot everyone loves – fast."
+    />
+    <!--ToDo: change url to https://fuss.app after prod deploy-->
+    <meta property="og:image" content="https://fuss-front.netlify.app/assets/og-image.svg" />
+    <meta property="og:url" content="https://fuss.app" />
+    <meta property="og:type" content="website" />
+
+    <title>{title}</title>
   </head>
   <body>
     <slot />
