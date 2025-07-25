@@ -3,9 +3,11 @@ import Image from 'astro/components/Image.astro';
 import mockupFriendsImg from '@/assets/images/tell-me-more/mockup-friends-choosing.png';
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import CircleIcon2 from '@/assets/icons/strokes/circle-2.svg';
+import CircleIcon4 from '@/assets/icons/strokes/circle-4.svg';
 import styles from './MockupSection.module.scss';
 
 const { src: circleIcon2Src } = CircleIcon2;
+const { src: circleIcon4Src } = CircleIcon4;
 ---
 
 <section class={styles.mockup}>
@@ -22,7 +24,7 @@ const { src: circleIcon2Src } = CircleIcon2;
       <Typography
         variant="h3"
         class={styles['mockup__right-title']}
-        style={`--circle-icon-url: url(${circleIcon2Src})`}
+        style={`--circleIcon2: url(${circleIcon2Src}); --circleIcon4: url(${circleIcon4Src})`}
         >Takes the <span>pressure&nbsp;off</span>
       </Typography>
     </div>
