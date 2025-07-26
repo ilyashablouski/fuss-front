@@ -9,6 +9,7 @@ interface ListItem {
 
 interface ListContent {
   type: 'list';
+  listType: 'ordered' | 'unordered';
   items: ListItem[];
 }
 

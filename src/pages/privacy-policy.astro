@@ -32,6 +32,7 @@ const legalContentData: LegalContentSection[] = [
       },
       {
         type: 'list',
+        listType: 'ordered',
         items: [
           {
             text: 'Non-personal information regarding interactions with our Services, non-personal technical data from device gathered by third parties’ technology such as SDK, pixels, widgets, etc. We need this data to manage and administer the Services provided to you, to analyze the use our Services in general and for statistics purposes.',
@@ -192,7 +193,7 @@ const legalContentData: LegalContentSection[] = [
     <Header />
     <main>
       <div class={styles.legalHeading}>
-        <Typography variant="h1">
+        <Typography variant="h1" class={styles.legalHeadingH1}>
           This is the Privacy Policy for FUSS (collectively, "FUSS", "we", "us" or "our").
         </Typography>
       </div>
@@ -217,13 +218,23 @@ const legalContentData: LegalContentSection[] = [
               if (item.type === 'list') {
                 return (
                   <div class={styles.legalContentText}>
-                    <ol>
-                      {item.items.map((listItem) => (
-                        <li>
-                          <Typography variant="body4">{listItem.text}</Typography>
-                        </li>
-                      ))}
-                    </ol>
+                    {item.listType === 'ordered' ? (
+                      <ol>
+                        {item.items.map((listItem) => (
+                          <li>
+                            <Typography variant="body4">{listItem.text}</Typography>
+                          </li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <ul>
+                        {item.items.map((listItem) => (
+                          <li>
+                            <Typography variant="body4">{listItem.text}</Typography>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 );
               }

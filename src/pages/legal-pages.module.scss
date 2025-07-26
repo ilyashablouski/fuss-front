@@ -5,17 +5,17 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+}
 
-  * {
-    text-align: center;
-    font-size: rem($fs-48);
-    font-weight: 600;
-    line-height: 1.25;
+.legalHeadingH1 {
+  text-align: center;
+  font-size: rem($fs-48);
+  font-weight: 600;
+  line-height: 1.25;
 
-    @include media-max($md) {
-      font-size: rem($fs-36);
-      line-height: 1.22;
-    }
+  @include media-max($md) {
+    font-size: rem($fs-36);
+    line-height: 1.22;
   }
 }
 
@@ -30,9 +30,9 @@
 .legalContentText {
   margin-top: 8px;
 
-  ol {
+  ol, ul {
     margin: 0;
-    padding-left: 22px;
+    padding-left: 24px;
   }
 
   li::marker {
@@ -40,6 +40,17 @@
     font-weight: 400;
     line-height: 1.55;
     color: $text-primary;
+  }
+}
+
+.legalHeadingDate {
+  margin-bottom: 12px;
+
+  * {
+    text-align: center;
+    font-size: rem($fs-base);
+    font-weight: 600;
+    color: $text-green;
   }
 }
 
