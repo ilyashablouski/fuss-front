@@ -5,6 +5,77 @@ import Footer from '@/components/shared/layout/Footer/Footer.astro';
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 
 import styles from './legal-pages.module.scss';
+import { LegalContentSection } from '../types';
+
+const legalContentData: LegalContentSection[] = [
+  {
+    title: 'FUSS Users',
+    titleVariant: 'h4',
+    content: [
+      {
+        type: 'paragraph',
+        text: [
+          'Below are the types of Data we collect about FUSS Users and the ways in which we may collect, use, and share that Data.',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'What Data Does FUSS Collect',
+    titleVariant: 'h4',
+    content: [
+      {
+        type: 'paragraph',
+        text: [
+          'To implement the agreement between you and us and provide you with access to the use of the Services, we will improve, develop, and implement new features to our Services, and enhance the available Services functionality. To achieve these objectives, and in compliance with applicable laws, we will collect, store, aggregate, organize, extract, compare, use, and supplement your data.',
+        ],
+      },
+      {
+        type: 'list',
+        items: [
+          {
+            text: 'Non-personal information regarding interactions with our Services, non-personal technical data from device gathered by third parties’ technology such as SDK, pixels, widgets, etc. We need this data to manage and administer the Services provided to you, to analyze the use our Services in general and for statistics purposes.',
+          },
+          {
+            text: 'Location Data - We use your location data in order to manage and administer the Services provided to you. We use this data to enable us to fulfill our obligations to you as part of the Services (e.g. in cases where you request restoration of your account). We also use this information in order to provide you with recommendations we think you may be interested in and tailor and improve the adverts that are presented in the Services.',
+          },
+          {
+            text: 'Additional data received when you access the Services, including information regarding technical devices, technical interaction with the Service such as your IP-address, time of registration in the Service, country and language settings, device model and operating system used, your installed apps, type of a browser, your Internet provider and/or phone network operator, network type, screen resolution, RAM size. We use your data for internal review to constantly improve the content of our Services and web pages, optimizing your user experience, to understand any errors you may encounter when using the Services, to notify you of changes to the Services and to personalize the use of our Services.',
+          },
+          {
+            text: 'Information that is automatically received at the time of access to the Site with the use of cookies. We use this information to manage and administer the Services including providing our services to you.',
+          },
+          {
+            text: 'Information that is created by you while placing requests to our support. We use this information to verify your identity and to fulfil your support request.',
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        text: [
+          'We may also use this data to investigate any complaints on your behalf and to provide you with a more efficient service.',
+          'Your personal information may also be processed if it is required by a law enforcement or regulatory authority, body, or agency or in the defense or exercise of legal claims. We will not delete personal information if it is relevant to an investigation or a dispute. It will continue to be stored until those issues are fully resolved and/or during the term that is required and/or permissible under applicable/relevant law. You may withdraw your consent the collection of location data by amending your privacy settings on your device.',
+          'Please note, if you withdraw your consent to processing or you do not provide the data that we require to maintain and administer the Services, you may not be able to access the Services.',
+          'If we intend to further process your data for any other purpose to those set out in this Privacy Policy, we shall provide you with details of this further purpose before we commence processing.',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'How Is My Data Used?',
+    titleVariant: 'h5',
+    content: [
+      {
+        type: 'paragraph',
+        text: [
+          'Below are the ways that we may use Data about FUSS Users.',
+          'We may also use your Data for research and development, to improve the Services, or to offer new products, features, and tools, but only to the extent that this is in compliance with applicable law. For example, we may redesign the Apps to make it easier for you to search for places in FUSS. We may also use your Data to customize our Apps and Sites to provide you with your own special experience. We do this by inferring your interests and preferences, looking at your search history.',
+          'We also may use your Data to help us map Locations (as defined below). For example, we may use device signals to determine that a particular device is within a particular venue. Additionally, if you consent to sharing crash data (when the Apps crash) with us, we may use that data to help us analyze the cause of the crash.',
+        ],
+      },
+    ],
+  },
+];
 ---
 
 <Layout title="Privacy Policy">
@@ -12,126 +83,46 @@ import styles from './legal-pages.module.scss';
     <Header />
     <main>
       <div class={styles.legalHeading}>
-        <Typography variant="h1"
-          >This is the Privacy Policy for FUSS (collectively, "FUSS", "we", "us" or "our").
+        <Typography variant="h1">
+          This is the Privacy Policy for FUSS (collectively, "FUSS", "we", "us" or "our").
         </Typography>
       </div>
 
-      <div class={styles.legalContent}>
-        <div class={styles.legalContentTitle}>
-          <Typography variant="h4">FUSS Users</Typography>
-        </div>
+      {
+        legalContentData.map((section) => (
+          <div class={styles.legalContent}>
+            <div class={styles.legalContentTitle}>
+              <Typography variant={section.titleVariant}>{section.title}</Typography>
+            </div>
 
-        <div class={styles.legalContentText}>
-          <Typography variant="body4"
-            >Below are the types of Data we collect about FUSS Users and the ways in which we may collect,
-            use, and share that Data.
-          </Typography>
-        </div>
-      </div>
-
-      <div class={styles.legalContent}>
-        <div class={styles.legalContentTitle}>
-          <Typography variant="h4">What Data Does FUSS Collect</Typography>
-        </div>
-
-        <div class={styles.legalContentText}>
-          <Typography variant="body4">
-            To implement the agreement between you and us and provide you with access to the use of the
-            Services, we will improve, develop, and implement new features to our Services, and enhance the
-            available Services functionality. To achieve these objectives, and in compliance with applicable
-            laws, we will collect, store, aggregate, organize, extract, compare, use, and supplement your
-            data.
-          </Typography>
-        </div>
-
-        <div class={styles.legalContentText}>
-          <ol>
-            <li>
-              <Typography variant="body4">
-                Non-personal information regarding interactions with our Services, non-personal technical
-                data from device gathered by third parties’ technology such as SDK, pixels, widgets, etc.<br
-                /> We need this data to manage and administer the Services provided to you, to analyze the use
-                our Services in general and for statistics purposes.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body4">
-                Location Data - We use your location data in order to manage and administer the Services
-                provided to you. We use this data to enable us to fulfill our obligations to you as part of
-                the Services (e.g. in cases where you request restoration of your account).<br />
-                We also use this information in order to provide you with recommendations we think you may be
-                interested in and tailor and improve the adverts that are presented in the Services.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body4">
-                Additional data received when you access the Services, including information regarding
-                technical devices, technical interaction with the Service such as your IP-address, time of
-                registration in the Service, country and language settings, device model and operating
-                system used, your installed apps, type of a browser, your Internet provider and/or phone
-                network operator, network type, screen resolution, RAM size. We use your data for internal
-                review to constantly improve the content of our Services and web pages, optimizing your user
-                experience, to understand any errors you may encounter when using the Services, to notify
-                you of changes to the Services and to personalize the use of our Services.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body4">
-                Information that is automatically received at the time of access to the Site with the use of
-                cookies. We use this information to manage and administer the Services including providing
-                our services to you.
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body4">
-                Information that is created by you while placing requests to our support. We use this
-                information to verify your identity and to fulfil your support request.
-              </Typography>
-            </li>
-          </ol>
-        </div>
-
-        <div class={styles.legalContentText}>
-          <Typography variant="body4"
-            >We may also use this data to investigate any complaints on your behalf and to provide you with
-            a more efficient service. Your personal information may also be processed if it is required by a
-            law enforcement or regulatory authority, body, or agency or in the defense or exercise of legal
-            claims. We will not delete personal information if it is relevant to an investigation or a
-            dispute. It will continue to be stored until those issues are fully resolved and/or during the
-            term that is required and/or permissible under applicable/relevant law. You may withdraw your
-            consent the collection of location data by amending your privacy settings on your device. Please
-            note, if you withdraw your consent to processing or you do not provide the data that we require
-            to maintain and administer the Services, you may not be able to access the Services.<br />
-
-            If we intend to further process your data for any other purpose to those set out in this Privacy
-            Policy, we shall provide you with details of this further purpose before we commence processing.
-          </Typography>
-        </div>
-      </div>
-
-      <div class={styles.legalContent}>
-        <div class={styles.legalContentTitle}>
-          <Typography variant="h5">How Is My Data Used?</Typography>
-        </div>
-
-        <div class={styles.legalContentText}>
-          <Typography variant="body4"
-            >Below are the ways that we may use Data about FUSS Users.<br />
-
-            We may also use your Data for research and development, to improve the Services, or to offer new
-            products, features, and tools, but only to the extent that this is in compliance with applicable
-            law. For example, we may redesign the Apps to make it easier for you to search for places in
-            FUSS. We may also use your Data to customize our Apps and Sites to provide you with your own
-            special experience. We do this by inferring your interests and preferences, looking at your
-            search history.<br />
-            We also may use your Data to help us map Locations (as defined below). For example, we may use device
-            signals to determine that a particular device is within a particular venue. Additionally, if you
-            consent to sharing crash data (when the Apps crash) with us, we may use that data to help us analyze
-            the cause of the crash.
-          </Typography>
-        </div>
-      </div>
+            {section.content.map((item) => {
+              if (item.type === 'paragraph') {
+                return (
+                  <div class={styles.legalContentText}>
+                    {item.text.map((paragraph) => (
+                      <Typography variant="body4">{paragraph}</Typography>
+                    ))}
+                  </div>
+                );
+              }
+              if (item.type === 'list') {
+                return (
+                  <div class={styles.legalContentText}>
+                    <ol>
+                      {item.items.map((listItem) => (
+                        <li>
+                          <Typography variant="body4">{listItem.text}</Typography>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        ))
+      }
     </main>
 
     <Footer />
