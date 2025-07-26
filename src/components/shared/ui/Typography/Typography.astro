@@ -3,7 +3,20 @@ import type { HTMLAttributes, HTMLTag } from 'astro/types';
 import styles from './Typography.module.scss';
 
 type Props<Tag extends HTMLTag> = HTMLAttributes<Tag> & {
-  variant?: 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'body3' | 'heavy' | 'extra' | 'small' | 'button';
+  variant?:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'body1'
+    | 'body2'
+    | 'body3'
+    | 'body4'
+    | 'heavy'
+    | 'extra'
+    | 'small'
+    | 'button';
   as?: Tag;
   class?: string;
 };
@@ -15,9 +28,12 @@ const variantToTag: Record<NonNullable<Props<any>['variant']>, HTMLTag> = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
   body1: 'p',
   body2: 'p',
   body3: 'p',
+  body4: 'p',
   heavy: 'p',
   extra: 'p',
   small: 'p',
