@@ -3,6 +3,12 @@ import FussLogo from '@/assets/images/logo.svg';
 import Button from '@/components/shared/ui/Button/Button.astro';
 import { URLS } from '@/constants';
 import styles from './Header.module.scss';
+
+interface Props {
+  btnText?: string;
+}
+
+const { btnText = 'Download' } = Astro.props;
 ---
 
 <header class={styles.header}>
@@ -10,5 +16,5 @@ import styles from './Header.module.scss';
     <FussLogo width={92} />
   </a>
 
-  <Button href={URLS.download} variant="contained" size="large">Download</Button>
+  <Button href={URLS.download} variant="contained" size="large">{btnText}</Button>
 </header>
