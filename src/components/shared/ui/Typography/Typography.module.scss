@@ -18,12 +18,13 @@
   }
 
   &h2 {
-    font-size: rem($fs-72);
+    font-size: rem($fs-64);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.125;
 
     @include media-max($md) {
-      font-size: rem($fs-48);
+      font-size: rem($fs-32);
+      line-height: 1.187;
     }
   }
 
@@ -57,7 +58,6 @@
 
     @include media-max($md) {
       font-size: rem($fs-20);
-      line-height: 1;
     }
   }
 

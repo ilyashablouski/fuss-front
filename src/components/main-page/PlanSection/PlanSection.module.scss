@@ -1,34 +1,36 @@
 .plan {
-  margin-top: 100px;
+  margin-top: 50px;
   padding-bottom: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 102px;
+  gap: 100px;
 
   @include media-max($lg) {
     gap: 32px;
   }
 
   @include media-max($md) {
-    margin-top: 50px;
+    margin-top: 32px;
     padding-bottom: 50px;
     flex-direction: column;
     gap: 0;
   }
 
   &-left {
-    flex: 1 1 450px;
-    max-width: 450px;
+    flex: 1 1 600px;
+    max-width: 600px;
 
     @include media-max($md) {
-      margin-top: 40px;
+      margin-top: 24px;
       order: 2;
       flex: 1 1 auto;
     }
 
     &__heading {
+      display: block;
       @include media-max($md) {
+        display: none;
         text-align: center;
       }
 
@@ -43,16 +45,22 @@
           color: $text-red;
         }
       }
+
+      &-mobile {
+        display: none;
+        @include media-max($md) {
+          display: block;
+        }
+      }
     }
 
     &__text {
       margin-top: 24px;
 
       @include media-max($md) {
+        margin-top: 0;
         text-align: center;
-        * {
-          font-size: rem($fs-24);
-        }
+        max-width: 295px;
       }
     }
 
@@ -73,12 +81,12 @@
   }
 
   &-right {
-    margin-right: 174px;
-    position: relative;
+    margin-right: 130px;
     display: flex;
 
     @include media-max($md) {
       order: 1;
+      flex-direction: column;
     }
 
     @include media-max($lg) {
@@ -86,42 +94,63 @@
     }
 
     &__image {
-      width: 414.47px;
+      &-wrapper {
+        position: relative;
+        display: inline-flex;
+
+        @include media-max($md) {
+          margin-top: 24px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      width: 310px;
       height: auto;
 
       @include media-max($lg) {
-        width: 251.64px;
+        width: 260px;
+      }
+
+      @include media-max($md) {
+        width: 197.5px;
       }
     }
 
     &__slider {
       position: absolute;
-      bottom: 112px;
-      left: 35px;
+      bottom: 84px;
+      left: 22px;
       overflow: hidden;
 
       @include media-max($lg) {
         bottom: 65px;
         left: 24px;
       }
+
+      @include media-max($md) {
+        bottom: 52px;
+        left: 18px;
+      }
     }
 
     &__image-flame {
       position: absolute;
-      top: 230px;
-      right: -174px;
-      width: 111px;
-      height: 179px;
+      top: 170px;
+      right: -130px;
+      width: 82.74px;
+      height: 133.42px;
 
       @include media-max($lg) {
-        top: 80px;
-        right: -36px;
-        width: 67.39px;
-        height: 108.68px;
+        top: 165px;
+        right: -40px;
+        width: 60.36px;
+        height: 97.33px;
       }
 
       @include media-max($md) {
-        right: -58px;
+        right: -72px;
+        top: 0;
       }
     }
   }

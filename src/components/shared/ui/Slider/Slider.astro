@@ -12,15 +12,18 @@ const { slides, class: className } = Astro.props;
 
 <style lang="scss">
   .slider {
-    --slider-end-offset: calc(-100% + 227px);
+    --slider-end-offset: calc(-100% + 169.5px);
 
     display: flex;
-    gap: 21px;
+    gap: 16px;
 
     @include media-max($lg) {
-      --slider-end-offset: calc(-100% + 140.37px);
+      --slider-end-offset: calc(-100% + 145px);
+      gap: 10px;
+    }
 
-      gap: 13px;
+    @include media-max($md) {
+      --slider-end-offset: calc(-100% + 110px);
     }
 
     &.start-animation {
@@ -28,11 +31,15 @@ const { slides, class: className } = Astro.props;
     }
 
     &__item {
-      width: 227px;
+      width: 169.5px;
       display: inline-flex;
 
       @include media-max($lg) {
-        width: 140.37px;
+        width: 145px;
+      }
+
+      @include media-max($md) {
+        width: 110px;
       }
 
       img {
@@ -57,7 +64,11 @@ const { slides, class: className } = Astro.props;
   {
     slides.map((slide, index) => (
       <div class="slider__item">
-        <Image src={slide} alt={`Cool place ${index + 1} in London shown in the app image`} />
+        <Image
+          src={slide}
+          alt={`Cool place ${index + 1} in London shown in the app image`}
+          fetchpriority="high"
+        />
       </div>
     ))
   }

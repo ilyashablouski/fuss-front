@@ -59,18 +59,33 @@ const slides = [
     </div>
   </div>
   <div class={styles['plan-right']}>
-    <Image
-      class={styles['plan-right__image']}
-      src={appUiPlanWithFriendsImg}
-      alt="FUSS app interface showing Plan with Friends feature"
-      fetchpriority="high"
-    />
-    <div class={styles['plan-right__slider']}>
-      <Slider slides={slides} />
+    <div class:list={[styles['plan-left__heading'], styles['plan-left__heading-mobile']]}>
+      <Typography variant="h2"
+        >THE APP THAT SAVES <span
+          class:list={[styles['plan-left__heading-extra'], styles['plan-left__heading-extra-green']]}
+          >FRIENDSHIPS</span
+        >
+        <span class={styles['plan-left__heading-extra']}> & </span>
+        <span class:list={[styles['plan-left__heading-extra'], styles['plan-left__heading-extra-red']]}
+          >DATES</span
+        >
+      </Typography>
     </div>
+    <div class={styles['plan-right__image-wrapper']}>
+      <Image
+        class={styles['plan-right__image']}
+        src={appUiPlanWithFriendsImg}
+        alt="FUSS app interface showing Plan with Friends feature"
+        fetchpriority="high"
+      />
 
-    <div class={styles['plan-right__image-flame']}>
-      <FlameSvg />
+      <div class={styles['plan-right__slider']}>
+        <Slider slides={slides} />
+      </div>
+      
+      <div class={styles['plan-right__image-flame']}>
+        <FlameSvg />
+      </div>
     </div>
   </div>
 </section>
