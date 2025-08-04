@@ -38,7 +38,7 @@ const funImages2 = [
             src={image}
             class:list={[styles[`fun__image${index + 1}`], 'fun__images', 'fun-image-swap']}
             alt="friends having fun in the app"
-            fetchpriority="high"
+            fetchpriority="low"
           />
         </div>
       ))
@@ -54,6 +54,19 @@ const funImages2 = [
     let currentSetIndex = 0;
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    // Function to preload images and ensure they are cached
+    const preloadImages = (sources) => {
+      const promises = sources.map((source) => {
+        return new Promise((resolve, reject) => {
+          const img = new window.Image();
+          img.src = source.src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      return Promise.all(promises);
+    };
 
     const animateImages = async () => {
       // Determine the next set of images to display
@@ -83,7 +96,16 @@ const funImages2 = [
       animateImages();
     };
 
-    // Start the animation loop once the page is fully loaded
-    window.addEventListener('load', animateImages);
+    // Start the animation loop once the page is fully loaded and images are preloaded
+    window.addEventListener('load', async () => {
+      try {
+        await Promise.all([...imageSets.map(preloadImages)]);
+        animateImages();
+      } catch (error) {
+        console.error('Failed to preload images:', error);
+        // Optionally, start animation even if preloading fails
+        animateImages();
+      }
+    });
   }
 </script>
