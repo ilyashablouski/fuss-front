@@ -6,13 +6,19 @@ import FussLogo from '@/assets/images/logo.svg';
 import InstagramIcon from '@/assets/icons/socials/Instagram.svg';
 import { URLS } from '@/constants';
 import styles from './Footer.module.scss';
+
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
 ---
 
 <footer class={styles.footer}>
   <div class={styles.footer__wrapper}>
     <div class={styles.footer__left}>
       <a class="link" href="/">
-        <FussLogo width={92} />
+        <FussLogo class="logo" />
       </a>
 
       <div class={styles['footer__left-links']}>
@@ -20,13 +26,19 @@ import styles from './Footer.module.scss';
         <a class="link" href="/terms">Terms</a>
       </div>
     </div>
-    <div class={styles.footer__right}>
+    <div class={styles.footer__right} style={{ justifyContent: 'center' }}>
       <AppStoreButton isSmall />
-      <Button variant="contained" size="small" href="/tell-me-more">Tell&nbsp;me&nbsp;more</Button>
+      {
+        isHome && (
+          <Button variant="contained" size="small" href="/tell-me-more">
+            Tell&nbsp;me&nbsp;more
+          </Button>
+        )
+      }
     </div>
   </div>
   <div class={styles.footer__bottom}>
-    <Typography variant="small" aria-label="copyright">© 2025 FUSS. All rights reserved.</Typography>
+    <Typography variant="small" aria-label="copyright">&copy; 2025 FUSS. All rights reserved.</Typography>
 
     <a class="link" href={URLS.instagram} target="_blank">
       <InstagramIcon />

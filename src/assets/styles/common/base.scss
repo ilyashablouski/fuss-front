@@ -97,3 +97,11 @@ a {
     font-size: rem($fs-20);
   }
 }
+
+.logo {
+  width: 92px;
+
+  @include media-max($md) {
+    width: 73px;
+  }
+}
