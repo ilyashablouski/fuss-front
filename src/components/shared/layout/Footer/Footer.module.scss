@@ -1,7 +1,12 @@
 .footer {
   margin-top: 100px;
   padding-top: 64px;
-  padding-bottom: 48px;
+  padding-bottom: 50px;
+
+  @include media-max($md) {
+    margin-top: 50px;
+    padding-top: 50px;
+  }
 
   &__wrapper {
     display: flex;
@@ -9,7 +14,7 @@
 
     @include media-max($md) {
       flex-direction: column;
-      gap: 32px;
+      gap: 24px;
     }
   }
 
@@ -24,8 +29,10 @@
       gap: 32px;
 
       @include media-max($md) {
+        margin-top: 24px;
         flex-direction: column;
         align-items: center;
+        gap: 24px;
       }
     }
   }
@@ -47,5 +54,9 @@
     justify-content: space-between;
     gap: 32px;
     border-top: 1px solid var(--border-divider);
+
+    @include media-max($md) {
+      margin-top: 32px;
+    }
   }
 }

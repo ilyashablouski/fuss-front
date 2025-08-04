@@ -7,13 +7,13 @@
 
 .typography-- {
   &h1 {
-    font-size: rem($fs-128);
+    font-size: rem($fs-96);
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.33;
 
     @include media-max($md) {
-      font-size: rem($fs-72);
-      line-height: 1.11;
+      font-size: rem($fs-40);
+      line-height: 1.1;
     }
   }
 
@@ -73,12 +73,13 @@
   }
 
   &body3 {
-    font-size: rem($fs-40);
+    font-size: rem($fs-32);
     font-weight: 600;
     line-height: 1;
 
     @include media-max($md) {
-      font-size: rem($fs-24);
+      font-size: rem($fs-20);
+      line-height: 1.5;
     }
   }
 
@@ -89,13 +90,13 @@
   }
 
   &heavy {
-    font-size: rem($fs-64);
+    font-size: rem($fs-48);
     font-weight: 600;
-    line-height: 1.125;
+    line-height: 1.33;
 
     @include media-max($md) {
-      font-size: rem($fs-40);
-      line-height: 1.3;
+      font-size: rem($fs-32);
+      line-height: 1.25;
     }
   }
 
