@@ -1,6 +1,5 @@
 .hero {
-  margin-top: 150px;
-  padding-bottom: 100px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,8 +10,9 @@
   }
 
   @include media-max($md) {
-    margin-top: 100px;
+    margin-top: 32px;
     flex-direction: column;
+    gap: 24px;
   }
 
   &__left {
@@ -24,6 +24,8 @@
     &-title {
       @include media-max($md) {
         text-align: center;
+        font-size: rem($fs-40);
+        line-height: 1.2;
 
         span {
           position: relative;
@@ -32,10 +34,10 @@
           &::before {
             content: '';
             position: absolute;
-            bottom: -30px;
-            right: 2px;
-            width: 224.89px;
-            height: 30.08px;
+            bottom: -24px;
+            right: 0;
+            width: 191px;
+            height: 26px;
             background-color: $icon-red;
             mask-image: var(--underline-icon-url);
             mask-size: contain;
@@ -43,17 +45,13 @@
           }
         }
       }
-
-      @media (min-width: 768px) {
-        font-size: rem($fs-80);
-      }
     }
   }
 
   &__right {
     display: inline-flex;
-    max-width: 312.3px;
-    min-width: 312.3px;
+    max-width: 310px;
+    min-width: 310px;
 
     @include media-max($lg) {
       min-width: 260px;
@@ -82,6 +80,7 @@
     gap: 16px;
 
     @include media-max($md) {
+      margin-top: 24px;
       flex-direction: column;
     }
   }
