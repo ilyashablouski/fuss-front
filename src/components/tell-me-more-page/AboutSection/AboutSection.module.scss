@@ -6,11 +6,17 @@
   }
 
   &__heading {
-    padding-bottom: 50px;
-    text-align: center;
+    text-align: left;
 
-    @include media-max($md) {
-      padding-bottom: 32px;
+    * {
+      font-size: rem($fs-48);
+      line-height: 1.16;
+
+      @include media-max($md) {
+        text-align: center;
+        font-size: rem($fs-32);
+        line-height: 1.25;
+      }
     }
   }
 
@@ -26,8 +32,8 @@
     }
 
     @include media-max($md) {
+      margin-top: 32px;
       flex-direction: column;
-      gap: 16px;
     }
   }
 
@@ -59,10 +65,10 @@
           mask-repeat: no-repeat;
 
           @include media-max($md) {
-            left: -16px;
-            top: -16px;
-            width: 162px;
-            height: 64px;
+            left: -6px;
+            top: -9px;
+            width: 123px;
+            height: 49px;
             mask-image: var(--circleIcon3);
           }
         }
