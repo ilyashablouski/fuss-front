@@ -18,27 +18,29 @@
   </a>
 </p>
 
-The official front-end for the Fuss application, built with the modern [Astro](https://astro.build/) framework for performance and a great developer experience.
+The official front-end for the landing page of the Fuss application, built with the modern [Astro](https://astro.build/)
+framework for performance and a great developer experience.
 
 ## ✨ Features
 
 - **Framework**: Built with [Astro](https://astro.build/)
 - **Styling**: Styled with [Sass](https://sass-lang.com/) for powerful and maintainable CSS.
-- **Linting & Formatting**: Code quality ensured with [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
+- **Linting & Formatting**: Code quality ensured with [ESLint](https://eslint.org/)
+  and [Prettier](https://prettier.io/).
 - **TypeScript**: Written in TypeScript for robust, scalable, and maintainable code.
 
 ## 🚀 Getting Started
 
-1.  **Install Dependencies**
-    ```sh
-    yarn install
-    ```
+1. **Install Dependencies**
+   ```sh
+   yarn install
+   ```
 
-2.  **Start Development Server**
-    ```sh
-    yarn dev
-    ```
-    This will start the local development server at `http://localhost:4321`.
+2. **Start Development Server**
+   ```sh
+   yarn dev
+   ```
+   This will start the local development server at `http://localhost:4321`.
 
 ## 🧞 Available Commands
 
