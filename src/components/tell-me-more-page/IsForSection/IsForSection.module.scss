@@ -1,16 +1,16 @@
 .isFor {
-  margin-top: 300px;
+  margin-top: 200px;
   padding-bottom: 50px;
 
   @include media-max($md) {
-    margin-top: 200px;
+    margin-top: 100px;
     padding-bottom: 0;
   }
 
   &__logo {
-    max-width: 164px;
+    max-width: 119px;
     @include media-max($md) {
-      max-width: 118px;
+      max-width: 92px;
     }
   }
 
@@ -19,6 +19,16 @@
     justify-content: center;
     gap: 16px;
     text-transform: uppercase;
+
+    * {
+      font-size: rem($fs-48);
+      line-height: 1.08;
+
+      @include media-max($md) {
+        font-size: rem($fs-32);
+        line-height: 1.25;
+      }
+    }
   }
 
   &__items {
@@ -27,17 +37,22 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 32px;
+
+    @include media-max($md) {
+      margin-top: 32px;
+      gap: 16px;
+    }
   }
 
   &__item {
-    padding: 50px 32px;
+    padding: 24px;
     flex: 1 1 calc(50% - 32px * 2);
     text-align: center;
     border: 1px solid $border-default;
     border-radius: $border-radius-default;
 
     @include media-max($md) {
-      padding: 16px 24px;
+      padding: 16px;
       flex: 1 1 100%;
     }
 
@@ -48,10 +63,28 @@
     }
 
     &-text {
-      margin-top: 20px;
+      margin-top: 16px;
+      @include media-max($md) {
+        margin-top: 12px;
+      }
 
       * {
         font-size: rem($fs-24);
+        line-height: 1.5;
+
+        @include media-max($md) {
+          font-size: rem($fs-base);
+          line-height: 1.375;
+        }
+      }
+    }
+
+    &-icon {
+      font-size: 64px;
+      line-height: 1;
+
+      @include media-max($md) {
+        font-size: 32px;
       }
     }
   }

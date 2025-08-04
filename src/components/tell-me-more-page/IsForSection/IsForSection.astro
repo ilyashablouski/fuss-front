@@ -4,6 +4,25 @@ import FussLogo from '@/assets/images/logo.svg';
 import styles from './IsForSection.module.scss';
 import Button from '@/components/shared/ui/Button/Button.astro';
 import { URLS } from '@/constants.ts';
+
+const isForItems = [
+  {
+    icon: '📋😵‍💫',
+    text: ['The one who always plans', 'and is this close to burnout'],
+  },
+  {
+    icon: '🌹😬',
+    text: ['The one trying to plan a great date —', 'without the risk of picking somewhere cringe'],
+  },
+  {
+    icon: '🗺️🤷‍♀️',
+    text: ['The one who just moved to London', 'and doesn’t know where to go'],
+  },
+  {
+    icon: '📱👀',
+    text: ['The one who’s tired of saying “let’s meet up”', ' and never actually meeting up'],
+  },
+];
 ---
 
 <section class={styles.isFor}>
@@ -13,46 +32,27 @@ import { URLS } from '@/constants.ts';
   </div>
 
   <div class={styles.isFor__items}>
-    <div class={styles.isFor__item}>
-      <div class={styles['isFor__item-title']}>
-        <Typography variant="heavy" as="span" style="line-height: 1;">📋😵‍💫</Typography>
-      </div>
-      <div class={styles['isFor__item-text']}>
-        <Typography variant="body1" style="font-weight: 600; line-height: 1.125;"
-          >The one who always plans and is this close to burnout💫
-        </Typography>
-      </div>
-    </div>
-    <div class={styles.isFor__item}>
-      <div class={styles['isFor__item-title']}>
-        <Typography variant="heavy" as="span" style="line-height: 1;">🌹😬</Typography>
-      </div>
-      <div class={styles['isFor__item-text']}>
-        <Typography variant="body1" style="font-weight: 600; line-height: 1.125;"
-          >The one trying to plan a great date — without the risk of picking somewhere cringe
-        </Typography>
-      </div>
-    </div>
-    <div class={styles.isFor__item}>
-      <div class={styles['isFor__item-title']}>
-        <Typography variant="heavy" as="span" style="line-height: 1;">🗺️🤷‍♀️</Typography>
-      </div>
-      <div class={styles['isFor__item-text']}>
-        <Typography variant="body1" style="line-height: 1.125;"
-          >The one who just moved to London and doesn’t know where to go
-        </Typography>
-      </div>
-    </div>
-    <div class={styles.isFor__item}>
-      <div class={styles['isFor__item-title']}>
-        <Typography variant="heavy" as="span" style="line-height: 1;">📱👀</Typography>
-      </div>
-      <div class={styles['isFor__item-text']}>
-        <Typography variant="body1" style="line-height: 1.125;"
-          >The one who’s tired of saying “let’s meet up” and never actually meeting up
-        </Typography>
-      </div>
-    </div>
+    {
+      isForItems.map((item) => (
+        <div class={styles.isFor__item}>
+          <div class={styles['isFor__item-title']}>
+            <Typography variant="heavy" as="span" class={styles['isFor__item-icon']}>
+              {item.icon}
+            </Typography>
+          </div>
+          <div class={styles['isFor__item-text']}>
+            <Typography variant="body1">
+              {item.text.map((line, index) => (
+                <>
+                  {line}
+                  {index < item.text.length - 1 && <br />}
+                </>
+              ))}
+            </Typography>
+          </div>
+        </div>
+      ))
+    }
   </div>
 
   <div class={styles.isFor__text}>
