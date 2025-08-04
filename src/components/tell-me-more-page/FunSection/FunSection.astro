@@ -46,41 +46,44 @@ const funImages2 = [
   </div>
 </section>
 
-<script define:vars={{ funImages2 }}>
-  const section = document.querySelector('.fun__images');
+<script define:vars={{ funImages1, funImages2 }}>
   const images = document.querySelectorAll('.fun-image-swap');
 
-  if (section) {
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            let currentIndex = 0;
+  if (images.length > 0) {
+    const imageSets = [funImages1, funImages2];
+    let currentSetIndex = 0;
 
-            // Helper function for delay
-            const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-            while (currentIndex < images.length && currentIndex < funImages2.length) {
-              const image = images[currentIndex];
-              if (image && funImages2[currentIndex]) {
-                image.style.opacity = '0';
-                await delay(100); // Wait for fade-out animation
-                image.src = funImages2[currentIndex].src;
-                image.style.opacity = '1';
-                currentIndex++; // Increment after animation completes
-                await delay(100); // Additional pause between images
-              } else {
-                break; // Exit loop if elements are unavailable
-              }
-            }
+    const animateImages = async () => {
+      // Determine the next set of images to display
+      const nextSetIndex = (currentSetIndex + 1) % imageSets.length;
+      const nextImageSources = imageSets[nextSetIndex];
 
-            observer.unobserve(entry.target); // Animate only once
-          }
+      // Animate each image one by one
+      for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+        const nextSrc = nextImageSources[i]?.src;
+
+        if (image && nextSrc) {
+          image.style.opacity = '0';
+          await delay(100); // Wait for fade-out
+          image.src = nextSrc;
+          image.style.opacity = '1';
+          await delay(100); // Pause between images
         }
-      },
-      { threshold: 0.5 },
-    );
+      }
 
-    observer.observe(section);
+      currentSetIndex = nextSetIndex;
+
+      // Wait before starting the next cycle
+      await delay(2000);
+
+      // Loop the animation
+      animateImages();
+    };
+
+    // Start the animation loop once the page is fully loaded
+    window.addEventListener('load', animateImages);
   }
 </script>
