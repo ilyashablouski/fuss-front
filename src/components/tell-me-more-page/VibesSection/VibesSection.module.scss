@@ -12,11 +12,10 @@
   @include media-max($md) {
     margin-top: 112px;
     flex-direction: column;
-    gap: 16px;
   }
 
   &__left {
-    max-width: 581px;
+    max-width: 533px;
     text-align: center;
 
     @include media-max($md) {
