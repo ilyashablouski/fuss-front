@@ -1,5 +1,5 @@
 .mockup {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -15,20 +15,19 @@
 
   @include media-max($md) {
     flex-direction: column;
-    gap: 16px;
   }
 
 
   .mockup__left {
     display: inline-flex;
-    max-width: 451.8px;
+    max-width: 452px;
 
     @include media-max($lg) {
       min-width: 310px;
     }
 
     @include media-max($md) {
-      max-width: 244.5px;
+      max-width: 223px;
     }
 
 
