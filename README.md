@@ -1,52 +1,52 @@
-# Astro Starter Kit: Basics
+# Fuss Front-End
 
-```sh
-yarn create astro@latest -- --template basics
-```
+<p align="center">
+  <a href="https://astro.build/">
+    <img src="https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  </a>
+  <a href="https://sass-lang.com/">
+    <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass">
+  </a>
+  <a href="https://eslint.org/">
+    <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint">
+  </a>
+  <a href="https://prettier.io">
+    <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" alt="Prettier">
+  </a>
+</p>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+The official front-end for the Fuss application, built with the modern [Astro](https://astro.build/) framework for performance and a great developer experience.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Framework**: Built with [Astro](https://astro.build/)
+- **Styling**: Styled with [Sass](https://sass-lang.com/) for powerful and maintainable CSS.
+- **Linting & Formatting**: Code quality ensured with [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
+- **TypeScript**: Written in TypeScript for robust, scalable, and maintainable code.
 
-## 🚀 Project Structure
+## 🚀 Getting Started
 
-Inside of your Astro project, you'll see the following folders and files:
+1.  **Install Dependencies**
+    ```sh
+    yarn install
+    ```
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+2.  **Start Development Server**
+    ```sh
+    yarn dev
+    ```
+    This will start the local development server at `http://localhost:4321`.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
+## 🧞 Available Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `yarn install`         | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command        | Action                                      |
+| :------------- | :------------------------------------------ |
+| `yarn install` | Installs dependencies                       |
+| `yarn dev`     | Starts local dev server at `localhost:4321` |
+| `yarn build`   | Build your production site to `./dist/`     |
+| `yarn preview` | Preview your build locally, before deploying|
