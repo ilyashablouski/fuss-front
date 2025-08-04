@@ -92,17 +92,6 @@
     }
 
     &__image {
-      &-wrapper {
-        position: relative;
-        display: inline-flex;
-
-        @include media-max($md) {
-          margin-top: 24px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-
       width: 310px;
       height: auto;
 
@@ -112,6 +101,17 @@
 
       @include media-max($md) {
         width: 197px;
+      }
+
+      &-wrapper {
+        position: relative;
+        display: inline-flex;
+
+        @include media-max($md) {
+          margin-top: 24px;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
     }
 
