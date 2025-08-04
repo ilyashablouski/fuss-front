@@ -38,7 +38,6 @@ const funImages2 = [
             src={image}
             class:list={[styles[`fun__image${index + 1}`], 'fun__images', 'fun-image-swap']}
             alt="friends having fun in the app"
-            fetchpriority="high"
           />
         </div>
       ))
@@ -55,9 +54,12 @@ const funImages2 = [
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    // Function to preload images and ensure they are cached
-    const preloadImages = (sources) => {
-      const promises = sources.map((source) => {
+    const animateImages = async () => {
+      const nextSetIndex = (currentSetIndex + 1) % imageSets.length;
+      const nextImageSources = imageSets[nextSetIndex];
+
+      // Preload the next set of images just in time
+      const preloadPromises = nextImageSources.map((source) => {
         return new Promise((resolve, reject) => {
           const img = new window.Image();
           img.src = source.src;
@@ -65,15 +67,10 @@ const funImages2 = [
           img.onerror = reject;
         });
       });
-      return Promise.all(promises);
-    };
 
-    const animateImages = async () => {
-      // Determine the next set of images to display
-      const nextSetIndex = (currentSetIndex + 1) % imageSets.length;
-      const nextImageSources = imageSets[nextSetIndex];
+      await Promise.all(preloadPromises);
 
-      // Animate each image one by one
+      // Animate each image one by one now that they are loaded
       for (let i = 0; i < images.length; i++) {
         const image = images[i];
         const nextSrc = nextImageSources[i]?.src;
@@ -96,16 +93,7 @@ const funImages2 = [
       animateImages();
     };
 
-    // Start the animation loop once the page is fully loaded and images are preloaded
-    window.addEventListener('load', async () => {
-      try {
-        await Promise.all([...imageSets.map(preloadImages)]);
-        animateImages();
-      } catch (error) {
-        console.error('Failed to preload images:', error);
-        // Optionally, start animation even if preloading fails
-        animateImages();
-      }
-    });
+    // Start the animation loop once the page is fully loaded
+    window.addEventListener('load', animateImages);
   }
 </script>
