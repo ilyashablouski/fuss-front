@@ -23,6 +23,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vscode/
+.windsurf/
 
 #AI settings
 .junie/
