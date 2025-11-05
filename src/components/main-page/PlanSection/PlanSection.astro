@@ -77,12 +77,13 @@ const slides = [
         src={appUiPlanWithFriendsImg}
         alt="FUSS app interface showing Plan with Friends feature"
         fetchpriority="high"
+        loading="eager"
       />
 
       <div class={styles['plan-right__slider']}>
         <Slider slides={slides} />
       </div>
-      
+
       <div class={styles['plan-right__image-flame']}>
         <FlameSvg />
       </div>
