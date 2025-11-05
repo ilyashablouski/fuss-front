@@ -76,8 +76,11 @@
           width: 279.5px;
           height: 100.22px;
           background-color: $icon-red;
+          -webkit-mask-image: var(--circleIcon2);
           mask-image: var(--circleIcon2);
+          -webkit-mask-size: contain;
           mask-size: contain;
+          -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 
           @include media-max($md) {
@@ -85,6 +88,7 @@
             right: -20px;
             width: 223px;
             height: 58px;
+            -webkit-mask-image: var(--circleIcon4);
             mask-image: var(--circleIcon4);
           }
         }

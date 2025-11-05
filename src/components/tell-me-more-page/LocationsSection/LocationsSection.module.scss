@@ -71,8 +71,11 @@
           width: 221.17px;
           height: 26.5px;
           background-color: $icon-red;
+          -webkit-mask-image: var(--underline-icon-url);
           mask-image: var(--underline-icon-url);
+          -webkit-mask-size: contain;
           mask-size: contain;
+          -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 
           @include media-max($md) {
