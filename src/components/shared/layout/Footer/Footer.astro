@@ -30,7 +30,7 @@ const { isHome = false } = Astro.props;
       <AppStoreButton isSmall />
       {
         isHome && (
-          <Button variant="contained" size="small" href="/tell-me-more">
+          <Button variant="contained" size="small" class={styles.footerTellMeMoreBtn} href="/tell-me-more">
             Tell&nbsp;me&nbsp;more
           </Button>
         )
