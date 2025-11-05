@@ -26,10 +26,6 @@ const { slides, class: className } = Astro.props;
       --slider-end-offset: calc(-100% + 110px);
     }
 
-    &.start-animation {
-      animation: scroll 15s ease-out forwards;
-    }
-
     &__item {
       width: 169.5px;
       display: inline-flex;
@@ -46,15 +42,6 @@ const { slides, class: className } = Astro.props;
         width: 100%;
         height: 100%;
         border-radius: $border-radius-img;
-      }
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(var(--slider-end-offset));
       }
     }
   }
@@ -75,23 +62,39 @@ const { slides, class: className } = Astro.props;
 </div>
 
 <script>
-  const slider = document.querySelector('.slider');
+  const slider = document.querySelector('.slider') as HTMLElement;
 
   if (slider) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            slider.classList.add('start-animation');
-            observer.unobserve(slider);
-          }
-        });
-      },
-      {
-        threshold: 0.01,
-      },
-    );
+    const updateSliderPosition = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-    observer.observe(slider);
+      const startScroll = 0;
+      // Animation ends at 85% of viewport height to finish before element exits
+      const endScroll = windowHeight * 0.85;
+
+      let progress = 0;
+
+      if (scrollY >= startScroll && scrollY <= endScroll) {
+        progress = (scrollY - startScroll) / (endScroll - startScroll);
+        progress = Math.max(0, Math.min(1, progress));
+      } else if (scrollY > endScroll) {
+        progress = 1;
+      }
+
+      const endOffsetStr = getComputedStyle(slider).getPropertyValue('--slider-end-offset').trim();
+      slider.style.transform = `translateX(calc(${endOffsetStr} * ${progress}))`;
+    };
+
+    // Update on scroll
+    window.addEventListener('scroll', updateSliderPosition, { passive: true });
+
+    // Initial update
+    updateSliderPosition();
+
+    // Cleanup on page navigation (for Astro view transitions)
+    document.addEventListener('astro:before-preparation', () => {
+      window.removeEventListener('scroll', updateSliderPosition);
+    });
   }
 </script>
