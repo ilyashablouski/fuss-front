@@ -2,6 +2,7 @@
 import Typography from '@/components/shared/ui/Typography/Typography.astro';
 import Button from '@/components/shared/ui/Button/Button.astro';
 import UnderlineIcon3 from '@/assets/icons/strokes/underline-3.svg';
+import RealHandwritten from '@/assets/icons/real-handwritten.svg';
 import styles from './HeroSection.module.scss';
 import { URLS } from '@/constants.ts';
 
@@ -12,7 +13,7 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
   <div class={styles.hero__title}>
     <Typography variant="h1" style={`--underline-icon-url: url(${underlineIcon3Src})`}
       >MEET IN <span class={styles['hero__title-extra']} data-animate-text aria-label="REAL">
-        <span class={styles['hero__title-letter']} style="--letter-index: 0">R</span><span class={styles['hero__title-letter']} style="--letter-index: 1">E</span><span class={styles['hero__title-letter']} style="--letter-index: 2">A</span><span class={styles['hero__title-letter']} style="--letter-index: 3">L</span>
+        <RealHandwritten class={styles['hero__title-svg']} />
       </span> LIFE
     </Typography>
   </div>
@@ -31,7 +32,7 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
 </section>
 
 <script>
-  // Intersection Observer for handwriting animation
+  // SVG handwriting animation
   const initAnimation = () => {
     const animatedTextElement = document.querySelector('[data-animate-text]');
 
@@ -54,7 +55,7 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
     const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.3, // Trigger when 30% of element is visible
+      threshold: 0.5, // Trigger when 50% of element is visible
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
