@@ -39,11 +39,12 @@
 
   &__right {
     display: flex;
+    justify-content: space-between;
     height: fit-content;
     gap: 32px;
 
     @include media-max($md) {
-      justify-content: space-between;
+      gap: 16px;
     }
   }
 
