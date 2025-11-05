@@ -24,14 +24,31 @@
         mask-image: var(--underline-icon-url);
         mask-size: contain;
         mask-repeat: no-repeat;
-
+        opacity: 0;
+        
         @include media-max($md) {
           width: 94px;
           height: 17px;
           bottom: -15px;
           left: -5px;
         }
+      }
+      
+      // Underline animation after text
+      &[data-animated="true"]::before {
+        animation: drawUnderline 0.8s ease-out 1.2s forwards;
+      }
+    }
 
+    &-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px) scale(0.8);
+      
+      // Each letter animates when parent has data-animated
+      [data-animated="true"] & {
+        animation: letterDraw 0.3s ease-out forwards;
+        animation-delay: calc(var(--letter-index) * 0.15s);
       }
     }
   }
@@ -57,5 +74,32 @@
   &__extra-text {
     position: relative;
     margin-top: 8px;
+  }
+}
+
+// Keyframes for letter drawing effect
+@keyframes letterDraw {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+// Keyframes for underline drawing
+@keyframes drawUnderline {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
   }
 }

@@ -11,7 +11,9 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
 <section class={styles.hero}>
   <div class={styles.hero__title}>
     <Typography variant="h1" style={`--underline-icon-url: url(${underlineIcon3Src})`}
-      >MEET IN <span class={styles['hero__title-extra']}>REAL</span> LIFE
+      >MEET IN <span class={styles['hero__title-extra']} data-animate-text aria-label="REAL">
+        <span class={styles['hero__title-letter']} style="--letter-index: 0">R</span><span class={styles['hero__title-letter']} style="--letter-index: 1">E</span><span class={styles['hero__title-letter']} style="--letter-index: 2">A</span><span class={styles['hero__title-letter']} style="--letter-index: 3">L</span>
+      </span> LIFE
     </Typography>
   </div>
 
@@ -27,3 +29,42 @@ const { src: underlineIcon3Src } = UnderlineIcon3;
     <Typography variant="extra">Android coming soon</Typography>
   </div>
 </section>
+
+<script>
+  // Intersection Observer for handwriting animation
+  const initAnimation = () => {
+    const animatedTextElement = document.querySelector('[data-animate-text]');
+
+    if (!animatedTextElement) {
+      return;
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const targetElement = entry.target as HTMLElement;
+          // Set data attribute to trigger CSS animation
+          targetElement.setAttribute('data-animated', 'true');
+          // Unobserve after animation triggers
+          observer.unobserve(targetElement);
+        }
+      });
+    };
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3, // Trigger when 30% of element is visible
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(animatedTextElement);
+  };
+
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimation);
+  } else {
+    initAnimation();
+  }
+</script>
