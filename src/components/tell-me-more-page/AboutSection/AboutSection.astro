@@ -17,7 +17,9 @@ const { src: circleIcon3Src } = CircleIcon3;
   <div class={styles.about__wrapper}>
     <div class={styles.about__left}>
       <div class={styles['about__left-title']}>
-        <Typography variant="h3" style={`--circleIcon1: url(${circleIcon1Src}); --circleIcon3: url(${circleIcon3Src})`}
+        <Typography
+          variant="h3"
+          style={`--circleIcon1: url(${circleIcon1Src}); --circleIcon3: url(${circleIcon3Src})`}
           ><span>Picks&nbsp;for</span>
           the whole group
         </Typography>
@@ -34,6 +36,7 @@ const { src: circleIcon3Src } = CircleIcon3;
         src={friendsHavingFunImg}
         alt="Group of friends hanging out together in real life"
         fetchpriority="high"
+        loading="eager"
       />
     </div>
   </div>

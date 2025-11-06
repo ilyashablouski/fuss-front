@@ -8,10 +8,10 @@ import { URLS } from '@/constants';
 import styles from './Footer.module.scss';
 
 interface Props {
-  isHome?: boolean;
+  hideTellMeMoreBtn?: boolean;
 }
 
-const { isHome = false } = Astro.props;
+const { hideTellMeMoreBtn = false } = Astro.props;
 ---
 
 <footer class={styles.footer}>
@@ -26,10 +26,13 @@ const { isHome = false } = Astro.props;
         <a class="link" href="/terms">Terms</a>
       </div>
     </div>
-    <div class={styles.footer__right}>
+    <div
+      class={styles.footer__right}
+      style={hideTellMeMoreBtn ? { justifyContent: 'center' } : { justifyContent: 'space-between' }}
+    >
       <AppStoreButton isSmall />
       {
-        isHome && (
+        !hideTellMeMoreBtn && (
           <Button variant="contained" size="small" class={styles.footerTellMeMoreBtn} href="/tell-me-more">
             Tell&nbsp;me&nbsp;more
           </Button>

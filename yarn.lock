@@ -59,7 +59,7 @@
     is-wsl "^3.1.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/ts-plugin@^1.10.4":
+"@astrojs/ts-plugin@1.10.4":
   version "1.10.4"
   resolved "https://registry.yarnpkg.com/@astrojs/ts-plugin/-/ts-plugin-1.10.4.tgz#ec38dfdaad563887ab78adc8f0030895bd0b5616"
   integrity sha512-rapryQINgv5VLZF884R/wmgX3mM9eH1PC/I3kkPV9rP6lEWrRN1YClF3bGcDHFrf8EtTLc0Wqxne1Uetpevozg==
@@ -323,12 +323,12 @@
     "@eslint/core" "^0.15.1"
     levn "^0.4.1"
 
-"@fontsource/caveat@^5.2.6":
+"@fontsource/caveat@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@fontsource/caveat/-/caveat-5.2.6.tgz#ecde1cbcc01d6966d4855bf4a3d41410cc1be491"
   integrity sha512-OKS809xrwMZq7wFQFBQ5DfK7EL7Pd0dVl7/cKyx3bwplugYhwLDp/+/7/PJH9F6KCHuit9aVdxMCxAbxFgKhSA==
 
-"@fontsource/manrope@^5.2.6":
+"@fontsource/manrope@5.2.6":
   version "5.2.6"
   resolved "https://registry.yarnpkg.com/@fontsource/manrope/-/manrope-5.2.6.tgz#bd39e24aad1b6c1b972a723b20362f8f82b01448"
   integrity sha512-tboCPLGXWWkNORL7gRhA1m16FJj2QuObk2lhBvkNrpjW0911pGawvHwxuierKHojPtXptfMJo7CUWxXGkKN5zA==
@@ -1104,7 +1104,7 @@ astro-eslint-parser@^1.0.2:
     is-glob "^4.0.3"
     semver "^7.3.8"
 
-astro@^5.11.0:
+astro@5.11.0:
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/astro/-/astro-5.11.0.tgz#346e5f774f37c5a68b46f67a459476865a28210d"
   integrity sha512-MEICntERthUxJPSSDsDiZuwiCMrsaYy3fnDhp4c6ScUfldCB8RBnB/myYdpTFXpwYBy6SgVsHQ1H4MuuA7ro/Q==

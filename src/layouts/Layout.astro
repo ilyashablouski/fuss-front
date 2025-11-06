@@ -2,6 +2,10 @@
 import CookiePopUp from '@/components/shared/ui/CookiePopUp/CookiePopUp.astro';
 import '@/assets/styles/index.scss';
 
+// Import critical fonts for preloading
+import manrope700 from '@fontsource/manrope/files/manrope-latin-700-normal.woff2?url';
+import manrope400 from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
+
 interface Props {
   title: string;
 }
@@ -34,6 +38,22 @@ const { title } = Astro.props;
     <meta property="og:type" content="website" />
 
     <title>{title}</title>
+
+    <!-- Preload critical fonts to prevent FOUT -->
+    <link
+      rel="preload"
+      href={manrope700}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href={manrope400}
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17324920208"></script>
